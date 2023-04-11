@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../Core2/Core2.css" />
+    </head>
+    <body>
+        Core
+        <div id="DemandBodyDiv" class="BodyScheme"></div>
+        <script src="../Core2/Core2.js"></script>
+        <script>
+            /*$.CoreDataSelect("Common", "Core.html", "Access", "CddDefinitionSelectReturn", "ExampleBOM", "None", {
+                PartID: 1,
+                Qty: 5
+            });*/
+            
+    $.CoreDataPage("snowball", "Core.html", "Access", "DemandSummarySelectReturn", "TestSummarySelect", "DemandBodyDiv", "Large", "None", {
+        Search: "%"
+    });
+
+            function DemandSummarySelectReturn(msg) {
+                console.log(msg);
+            }
+        </script>
+    </body>
+</html>

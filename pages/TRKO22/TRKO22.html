@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8" />
+          <title></title>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link href="RWD.css" rel="stylesheet" />
+          <link href="TRKO22.css" rel="stylesheet" />
+     </head>
+     <body>
+
+          <!-- Header (always displayed at the top, will hide when scrolling down due to "Sticky") -->
+          <div class="Sticky">
+               <div class="Navbar">
+                    <div class="Logo" onClick="window.location.href ='/'">BOS</div>
+               </div>
+
+               <div class="Container">
+                    <div class="AppTitle">HAWARDEN TRAVELER</div>
+               </div>
+          </div>
+          <!-- End Header -->
+
+          <!-- LoginDiv -->
+          <div class="Container LoginDiv">
+               <div class="Row">
+                   <div class="Col S96 M54 L54">Please scan your badge</div>
+                   <div class="Col S96 M42 L42"><div id="BadgeID" contenteditable="true"></div></div>
+                   <div class="Col S96 M48 L96"><span class="LoginError">⚠ BadgeID not found. Please try again.</span></div>
+                   <div class="Col S96 M48 L96"><div id="LoginBtn">Submit</div></div>
+               </div>
+          </div>
+          <!-- End LoginDiv -->
+
+          
+          <!-- TravelerBody -->
+          <div class="Container TravelerBody">
+
+               <div class="Sticky">
+                    <div class="Row">
+                         <div class="Col S12"><input type="button" value="New" id="TravelerNew" /></div>
+                         <div class="Col S84 AlignRight">Search contains <input type="text" id="TravelerSearch" /></div>
+                    </div>
+
+                    <!-- Used for Pagination above the body -->
+                    <div class="Paging">
+                         <div id="TravelerBodyPaging"></div>
+                    </div>
+
+                    <div class="RowPadding BorderBottom">
+                         <div class="Col S0 M8">LotID</div>
+                         <div class="Col S0 M24">Cdd Item</div>
+                         <div class="Col S0 M24">Template</div>
+                         <div class="Col S0 M16">Qty</div>
+                         <div class="Col S0 M20">Shop Order</div>
+                    </div>
+                    
+               </div>
+
+               <div id="TravelerBodyDiv"></div>
+          </div>
+          <!-- End TravelerBody -->
+
+          <script src="../Core2/Core2.js"></script>
+          <script src="TRKO22.js"></script>
+     </body>
+</html>

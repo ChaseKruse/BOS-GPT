@@ -1,0 +1,133 @@
+﻿body {  font-size:10pt; }
+
+input[type=text], input[type=button], textarea, select { font-size: 9pt; }
+input[type="radio"], input[type=checkbox] { vertical-align: text-bottom; }
+.BlockDiv { box-shadow: 10px 10px 10px gray; border:2px solid gray; border-radius:5px; padding:5px; margin:5px;  }
+.BlockTitle { border: 2px solid gray; border-radius: 5px; padding: 5px; background-color:gray; color:white;  }
+
+
+/* SeriesSummaryDiv */
+.SS0 { width: 3px; }
+.SS1 { width: 32%; }
+.SS2 { width: 32%; }
+.SS3 { width: 10%; }
+.SS4 { width: 25%; }
+
+
+/* SeriesDetailDiv*/
+#SeriesDetailDiv { display: none; }
+.SeriesParameters { border: none; }
+.SD1 { width: 15%; vertical-align: text-top; }
+.SD2 { width: 45%; padding-right: 18px; height: 20px; }
+	.SD2 input[type=text] { width: 100%; }
+.SD3 { width: 15%; }
+.SD4 { width: 25%; }
+.SeriesBtn { width: 75px; height: 35px; }
+
+
+/* MaskSummaryDiv */
+.MaskBtn { width: 75px; height: 35px; }
+#FixedBtn { color: red; }
+#AutoBtn { color: green; }
+#TextBtn { color: blue; }
+#SelectBtn { color: purple }
+
+#AutoBtnDisabled { color: #CCCCCC; } 
+
+
+/* MaskDetailDiv */
+#MaskDetailDiv { display: none; }
+#MaskDetailContainer { width: 270px; }
+.Fixed { background-color: #f9a3a3; cursor: pointer; }
+.Auto { background-color: #8af48a; cursor: pointer; }
+.Text { background-color: #acccfb; cursor: pointer }
+.Select { background-color: #f999f9; cursor: pointer; }
+.M1 input[type=text] { width: 98%; }
+.MaskDetailBtn { width: 65px; height: 20px; }
+
+
+/* DocTypeSummaryDiv */
+
+.DTS0 { width: 2px;}
+.DTS1 { width: 35%; }
+.DTS2 { width: 9%; }
+.DTS3 { width: 15%; }
+.DTS4 { width: 10%; }
+.DTS5 { width: 10%; }
+.DTS6 { width: 20%; }
+
+
+
+/* DocTypeDetailDiv */
+#DocTypeDetailDiv { display: none; }
+#DocTypeDetailContainer { width: 955px; }
+
+/* DocTypeDefinitionDiv */
+input[type=radio] { padding-left: 0px; margin-left: 3px; } 
+.DTD1 { width: 12%; height:22px; }
+.DTD1a { width: 12%; vertical-align: top; } 
+.DTD2 { width: 48%; padding-right:18px; }
+	.DTD2 input[type=text] { width: 100%; }
+.DTD3 { width: 15%;  }
+.DTD4 { width: 25%; }
+#MultiCardInstruction { border: 2px solid gray; border-radius: 5px; padding: 5px; background-color: yellow; margin-right:12px;}
+.DocTypeDefinitionBtn { width: 75px; height: 35px; }
+#DocTypeDefault { width: 365px;  } 
+
+
+/* DocTypeMultipleSelect*/
+#MultipleDiv { display: none; } 
+.ApplyRemoveBtn { width: 55px; height: 45px; } 
+
+
+/* RouteSummaryDiv */
+.RHS1 { width: 5px; }
+.RHS2 { width: 39%; }
+.RHS3 { width: 10%; }
+.RHS4 { width: 10%; }
+.RHS5 { width: 20%; }
+.RHS6 { width: 20%; }
+
+
+/* RouteDetailDiv */
+#RouteDetailDiv { display: none; } 
+
+
+/* RouteDefinitionDiv */
+.RD1 { width: 12%; }
+.RD2 { width: 53%; padding-right:18px; }
+	.RD2 input[type=text] { width: 100%; }
+	.RD2 textarea { width: 100%; height:44px; padding-left:0px;} 
+.RD3 { width: 15%; }
+.RD4 { width: 20%; height:22px; }
+.RouteBtn { width: 75px; height: 30px; } 
+
+
+
+/* StepDetailDiv */
+#StepDetailDiv { display: none; }
+
+.SD1 { width: 10%; }
+.SD2 { width: 60%; padding-right:15px; }
+.SD2 input[type=text] { width:100%; }
+.SD3 { width: 30%; }
+
+.StepOptions { vertical-align: top; padding-right: 25px; width:33%;}
+.SO1 { width: 85%; }
+.SO2 { width: 15%; }
+
+.StepBtn { width: 75px; height:25px; } 
+
+
+
+/* StepMenuDiv */
+#StepMenuDiv { display: none; } 
+#StepMenuContainer { width: 300px; }
+.StepMenuBtn { width: 225px; height: 45px; margin:20px 0px 20px 0px;}
+
+
+/* StepAltDiv */
+#StepAltDiv { display: none; } 
+#StepAltAvailableDiv { border: 2px solid gray; box-shadow: 10px 10px 10px gray; border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
+#StepAltAppliedDiv { border: 2px solid gray; box-shadow: 10px 10px 10px gray; border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
+.StepAltBtn { height: 45px; width: 50px; margin-bottom:20px; } 

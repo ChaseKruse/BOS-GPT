@@ -1,0 +1,11 @@
+
+
+/* LoginDiv */
+.LoginDiv { min-height:120px;}
+.LoginDiv > div { width:350px; margin:0 auto; }
+.LoginError { height:20px; font-size:10pt; color:red; visibility:hidden; }
+#LoginBtn { line-height:30px; background-color:#f2f2f2; border:1px solid #aaa; line-height:35px; min-height:35px; cursor:pointer; vertical-align:middle; text-align:center; user-select:none; }
+#LoginBtn:hover { background-color:#ddd; }
+#LoginBtn:active { background-color:#c1c7cd; border-style:inset; }
+#BadgeID { position:relative; text-align:left; border:1px solid #666; border-radius:3px; outline:none; padding:3px; margin:1px; }
+#BadgeID:focus { box-shadow: 0 0 1pt 1pt #99bde0; }

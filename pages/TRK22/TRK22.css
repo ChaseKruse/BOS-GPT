@@ -1,0 +1,202 @@
+/* General Classes */
+* { box-sizing: border-box; }
+html, body { font-size: 10pt; }
+body { border-radius:3px; }
+input[type=button], button { cursor:pointer; }
+input, select, textarea { font-family: 'Times New Roman'; font-size: 10pt; }
+textarea { resize:none; width:100%; height:75px; }
+
+.Header { font-size:1.5em; font-weight: bold; }
+.Remove:hover { color:red; }
+.Remove:hover * { text-decoration:line-through; } 
+
+input[type=checkbox] {width:16px;height:16px;position:relative;margin:0;}
+
+/* Cdd Summary */
+.CddSummaryRecord { padding:10px; margin:10px 15px 20px 0px; background-color:azure; border:2px solid gray; box-shadow:10px 10px 10px gray;}
+
+.C1 { width: 10%; }
+.C2 { width: 14%; }
+.C3 { width: 13%; }
+.C4 { width: 10%; }
+.C5 { width: 15%; }
+.C6 { width: 10%; }
+.C7 { width: 15%; }
+.C8 { width: 13%; }
+
+#CddDefinitionDiv { line-height:18px; }
+#CddDefinitionDiv input { height:18px; }
+
+.CD1 { width: 12%; }
+.CD2 { width: 20%; padding-right: 30px; }
+    .CD2 input[type=text] { width: 100%; }
+    .CD2 input[type=date] { width: 100%; padding: 0px; }
+    
+.CD3 { width: 14%; }
+.CD4 { width: 20%; padding-right:30px; }
+.CD4 input[type=text] { width: 100%; }
+.CD4 input[type=date] { width: 100%; padding: 0px; }
+.CD4 textarea { width: 100%; }
+.CD5 { width: 11%; }
+.CD6 { width: 23%; padding-right:30px;}
+.CD6 input[type=text] { width: 100%; }
+.CD6 input[type=date] { width: 100%; padding: 0px; }
+
+input.CddBtn { width: 75px; height: 30px !important; }
+
+/* Demand Summary */
+.DS1 { width:20%; }
+.DS2 { width:20%; }
+.DS3 { width:20%; }
+.DS4 { width:20%; }
+.DS5 { width:20%; }
+
+/* Deamnd Detail */
+#DemandDetailContainer { width:900px; }
+
+#DemandDefinitionDiv { line-height:18px; }
+#DemandDefinitionDiv input { height:18px; }
+#DemandDefintionDiv input[type=checkbox] { width:24px !important; height:24px !important; }
+
+.DD1 { width:15%; }
+.DD2 { width:15%; padding-right:30px; }
+.DD2 input[type=text],
+.DD2 input[type=date] { width:100%; }
+.DD3 { width:15%; }
+.DD4 { width:15%; padding-right:30px; }
+.DD5 { width:15%; }
+.DD6 { width:25%; }
+
+#DemandCddItem { width:86%; vertical-align: middle; }
+#DemandCddSearchBtn { width:12%; vertical-align: middle; font-size:7pt; line-height:16px;}
+
+input.DemandBtn { width: 75px; height: 30px !important; }
+
+.DCS1 { width:25%; }
+.DCS2 { width:25%; }
+.DCS3 { width:25%; }
+.DCS4 { width:25%; }
+
+/* Allocation Detail */
+#AllocationApply { width: 75px; height: 75px; font-size: 20pt; color:green; font-weight: bolder; }
+#AllocationRemove { width: 75px; height: 75px; font-size: 20pt; color:red; font-weight: bolder; }
+
+.AAS1 { width:15%; }
+.AAS2 { width:40%; }
+.AAS3 { width:25%; }
+.AAS4 { width:20%; }
+
+.APS1 { width:15%; }
+.APS2 { width:40%; }
+.APS3 { width:25%; }
+.APS4 { width:20%; }
+
+/* Traveler */
+.TravelerSummaryRecord { padding:0px 3px 0px 0px; margin:10px 15px 20px 5px; border:2px solid gray; box-shadow:10px 10px 10px gray;}
+
+.TS1 { width:12%; }
+.TS2 { width:16%; }
+.TS3 { width:35%; }
+.TS4 { width:10%; }
+.TS5 { width:10%; }
+.TS6 { width:7%; }
+.TS7 { width:10%; }
+
+/* Traveler Detail */
+#TravelerDetailContainer { width:750px; }
+
+#TravelerDefinitionDiv { line-height:18px; }
+#TravelerDefinitionDiv input { height:18px; }
+#TravelerDefintionDiv input[type=checkbox] { width:24px !important; height:24px !important; }
+
+.TD1 { width:15%; }
+.TD2 { width:45%; padding-right:30px; }
+.TD2 input[type=text],
+.TD2 input[type=date] { width:100%; }
+.TD3 { width:15%; }
+.TD4 { width:25%; }
+
+#TravelerTemplateName { width:86%; vertical-align: middle; }
+#TravelerTemplateSearchBtn { width:12%; vertical-align: middle; font-size:7pt; line-height:16px;}
+
+.TMS1 { width:10%; }
+.TMS2 { width:35%; }
+.TMS3 { width:25%; }
+.TMS4 { width:30%; }
+
+#TravelerCddItem { width:86%; vertical-align: middle; }
+#TravelerCddSearchBtn { width:12%; vertical-align: middle; font-size:7pt; line-height:16px;}
+
+input.TravelerBtn { width: 75px; height: 30px !important; }
+
+.TCS1 { width:25%; }
+.TCS2 { width:25%; }
+.TCS3 { width:25%; }
+.TCS4 { width:25%; }
+
+/* TravelerLoss */
+
+.TLS1 { width:17%; }
+.TLS2 { width:30%; }
+.TLS3 { width:8%; text-align:right; padding-right:5px; }
+.TLS4 { width:20%; }
+.TLS5 { width:25%; }
+
+
+#TravelerLossDetailContainer { width:650px; }
+
+#TravelerLossDefinitionDiv { line-height:18px; }
+#TravelerLossDefinitionDiv input, #TravelerLossDefinitionDiv select { height:18px; }
+
+.TLD1 { width:15%; padding-right:30px; }
+.TLD2 { width:45%; padding-right:30px; }
+.TLD2 input[type=text],
+.TLD2 select,
+.TLD2 input[type=date] { width:100%; }
+.TLD3 { width:15%; }
+.TLD4 { width:25%; }
+
+/* InventorySummary */
+
+.IS0 { width:2px; }
+.IS1 { width:10%; }
+.IS2 { width:25%; }
+.IS3 { width:25%; }
+.IS4 { width:10%; text-align:right; }
+.IS5 { width:10%; text-align:right; }
+.IS6 { width:20%; text-align:right; padding-right:5px; }
+
+
+
+/* TemplateSummaryDiv */
+
+.MS1 { width:10%; }
+.MS2 { width:30%; }
+.MS3 { width:30%; }
+.MS4 { width:30%; }
+
+/* TemplateDetailDiv */
+
+.MD1 { width:20%; }
+.MD2 { width:30%; padding-right:5px; }
+.MD2 input[type=text] { width:100%; }
+.MD3 { width:20%; }
+.MD4 { width:30%; }
+
+input.TemplateBtn { width: 75px; height: 30px !important; }
+
+
+/* TemplateSummaryDiv */
+
+.MSS1 { width:7%; }
+.MSS1 select { width:100%; padding:6px 0; }
+.MSS2 { width:15%; }
+.MSS2 select { width:100%; padding:6px 0; }
+.MSS3 { width:37%; }
+.MSS3 textarea { width:100%; height:32px; position:relative; top:2px; }
+.MSS4 { width:12%; }
+.MSS5 { width:13%; }
+.MSS6 { width:8%; }
+.MSS7 { width:8%; }
+
+input.TemplateStepBtn { width:100%; height: 30px !important; }

@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8" />
+          <title>TRK 22</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <link href="../Core2/Core2.css" rel="stylesheet" />
+          <link href="TRK22.css" rel="stylesheet" />
+     </head>
+    <body>
+
+		<div class="TabScheme" id="AppTabDiv" >
+			<span id="TravelerSummary">Travelers</span>
+			<span id="OrderSummary">Orders</span>
+			<span id="InventorySummary">Inventory</span>
+			<span id="ShippedSummary">Shipping</span>
+			<span id="TemplateSummary" style="position:relative;left:450px;">Templates</span>
+			<span id="CddSummary" style="position:relative;left:450px;">Master COD</span>
+		</div>
+
+		<div id="TravelerSummaryDiv">
+			<div class="TitleScheme">
+				<table class="FullWidth">
+						<tbody>
+							<tr>
+								<td>
+									<input id="TravelerNew" type="button" value="New Traveler" />
+								</td>
+								<td class="AlignRight">
+									Traveler contains <input id="TravelerSearch" type="text" />
+								</td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+			<div id="TravelerBodyDiv" class="BodyScheme" CoreSize="60">
+				<table class="FullWidth">
+						<tbody></tbody>
+				</table>
+			</div>
+
+			<div id="TravelerTemplateDetailDiv" class="Modal" style="display:none;">
+				<div id="TravelerTemplateDetailContainer" class="ModalContainer">
+					<div class="TitleScheme">
+						<table class="FullWidth">
+								<tbody>
+									<tr>
+										<td class="AlignRight">
+											Traveler contains <input id="TravelerSearch" type="text" />
+										</td>
+									</tr>
+								</tbody>
+						</table>
+					</div>
+					<div id="TravelerTemplateHeaderDiv" class="BorderBottomScheme">
+						<table class="FullWidth">
+							<tbody>
+								<tr>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div id="TravelerTemplateBodyDiv" class="BodyScheme" CoreSize="60">
+						<table class="FullWidth">
+								<tbody></tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div id="TravelerDetailDiv" class="Modal" style="display:none;">
+				<div id="TravelerDetailContainer" class="ModalContainer">
+					
+						<div class="TitleScheme">
+							<table class="FullWidth">
+								<tbody>
+									<tr>
+											<td>
+												<div id="TravelerTitle">New Traveler</div>
+											</td>
+											<td class="AlignRight">
+												<input type="button" id="TravelerDetailClose" class="DetailClose" value="×" />
+											</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div id="TravelerTabDiv" class="TabScheme">
+							<span id="TravelerDefinition">Definition</span>
+							<span id="TravelerHoursSummary">Operation List</span>
+							<span id="TravelerLossSummary">Loss History</span>
+							<span id="TravelerShippingSummary">Shipping History</span>
+						</div>
+
+						<div id="TravelerDefinitionDiv">
+							<input type="button" id="TravelerDefinitionEdit" class="Edit TravelerDefinitionEdit" value="Click here to edit" />
+							<table class="FullWidth">
+								<tbody>
+									<tr>
+											<td class="TD1">Lot #</td>
+											<td class="TD2"><input type="text" id="TravelerLotID" class="TravelerDefinitionEdit" CoreValidate="required" /></td>
+											<td class="TD3">Traveler ID</td>
+											<td class="TD4 TravelerDefinitionEdit" id="TravelerID">0</td>
+									</tr>
+									<tr>
+											<td class="TD1">Template</td>
+											<td class="TD2">
+											<input type="hidden" id="TravelerTemplateID" class="TravelerDefinitionEdit" />
+											<input type="text" id="TravelerTemplateName" disabled />
+											<input type="button" id="TravelerTemplateSearchBtn" class="TravelerDefinitionEdit" value="&#x1F50E;&#xFE0E;" />
+											</td>
+											<td class="TD3">Created</td>
+											<td class="TD4 TravelerDefinitionEdit" id="TravelerCreated"></td>
+									</tr>
+									<tr>
+											<td class="TD1">Cdd Record</td>
+											<td class="TD2">
+											<input type="hidden" id="TravelerCddID" class="TravelerDefinitionEdit" />
+											<input type="text" id="TravelerCddItem" disabled />
+											<input type="button" id="TravelerCddSearchBtn" class="TravelerDefinitionEdit" value="&#x1F50E;&#xFE0E;" />
+											</td>
+											<td class="TD3">Created By</td>
+											<td class="TD4 TravelerDefinitionEdit" id="TravelerCreatedBy"></td>
+									</tr>
+									<tr>
+											<td class="TD1">Shop Order</td>
+											<td class="TD2"><input type="text" id="TravelerShopOrder" class="TravelerDefinitionEdit" CoreValidate="integer"/></td>
+											<td class="TD3">Updated</td>
+											<td class="TD4 TravelerDefinitionEdit" id="TravelerUpdated"></td>
+									</tr>
+									<tr>
+											<td class="TD1">Scheduled Qty</td>
+											<td class="TD2"><input type="text" id="TravelerQtyScheduled" class="TravelerDefinitionEdit" CoreValidate="integer"/></td>
+											<td class="TD3">Updated By</td>
+											<td class="TD4 TravelerDefinitionEdit" id="TravelerUpdatedBy"></td>
+									</tr>
+									<tr>
+											<td class="TD1">Complete</td>
+											<td class="TD2"><input type="checkbox" id="TravelerComplete" class="TravelerDefinitionEdit"/></td>
+											<td class="TD3">&nbsp;</td>
+											<td class="TD4">&nbsp;</td>
+									</tr>
+									<tr>
+											<td colspan="4"><br /></td>
+									</tr>
+									<tr>
+											<td colspan="2">
+												<input type="button" id="TravelerSave" value="Save" class="TravelerBtn" />
+												<input type="button" id="TravelerCancel" value="Cancel" class="TravelerBtn" />
+											</td>
+											<td colspan="2" class="AlignRight">
+												<input type="button" id="TravelerDelete" value="Delete" class="TravelerBtn" />
+											</td>
+									</tr>
+								</tbody>
+							</table>
+						</div> <!-- TravelerDefinitionDiv -->
+					
+						<div id="TravelerTemplateDetailDiv" class="Modal" style="display:none;">
+							<div id="TravelerTemplateDetailContainer" class="ModalContainer">
+								<div class="TitleScheme">
+									<table class="FullWidth">
+											<tbody>
+												<tr>
+													<td class="AlignRight">
+														<input type="button" id="TravelerTemplateDetailClose" class="DetailClose" value="×" />
+													</td>
+												</tr>
+											</tbody>
+									</table>
+								</div>
+								<div>
+									<table class="FullWidth">
+											<tbody>
+												<tr>
+													<td class="AlignRight">
+														Cdd contains <input id="TravelerTemplateSearch" type="text" />
+													</td>
+												</tr>
+											</tbody>
+									</table>
+								</div>
+								<div class="BorderBottomScheme">
+									<table class="FullWidth">
+											<tbody>
+												<tr>
+													<td class="TMS1"><div>ID</div></td>
+													<td class="TMS2"><div>Template Name</div></td>
+													<td class="TMS3"><div>Last Updated</div></td>
+													<td class="TMS4"><div>Updated By</div></td>
+												</tr>
+											</tbody>
+									</table>
+								</div>
+								<div id="TravelerTemplateBodyDiv" class="BodyScheme" CoreSize="60">
+									<table class="FullWidth">
+											<tbody></tbody>
+									</table>
+								</div>
+							</div> <!-- TravelerTemplateDetailContainer -->
+						</div> <!-- TravelerTemplateDetailDiv -->
+
+						<div id="TravelerCddDetailDiv" class="Modal" style="display:none;">
+							<div id="TravelerCddDetailContainer" class="ModalContainer">
+								<div class="TitleScheme">
+									<table class="FullWidth">
+											<tbody>
+												<tr>
+													<td class="AlignRight">
+														<input type="button" id="TravelerCddDetailClose" class="DetailClose" value="×" />
+													</td>
+												</tr>
+											</tbody>
+									</table>
+								</div>
+								<div>
+									<table class="FullWidth">
+											<tbody>
+												<tr>
+													<td class="AlignRight">
+														Cdd contains <input id="TravelerCddSearch" type="text" />
+													</td>
+												</tr>
+											</tbody>
+									</table>
+								</div>
+								<div class="BorderBottomScheme">
+									<table class="FullWidth">
+											<tbody>
+												<tr>
+													<td class="DCS1"><div>Item</div></td>
+													<td class="DCS2"><div>Series</div></td>
+													<td class="DCS3"><div>Group</div></td>
+													<td class="DCS4"><div>Chip Type</div></td>
+												</tr>
+											</tbody>
+									</table>
+								</div>
+								<div id="TravelerCddBodyDiv" class="BodyScheme" CoreSize="60">
+									<table class="FullWidth">
+											<tbody></tbody>
+									</table>
+								</div>
+							</div> <!-- TravelerCddDetailContainer -->
+						</div> <!-- TravelerCddDetailDiv -->
+
+						<div id="TravelerHoursSummaryDiv">
+							<input type="text" id="TravelerHoursSearch" />
+							<div id="TravelerHoursBodyDiv"></div>
+							<pre id="TravelerHoursTemp" class="BodyScheme"></pre>
+						</div> <!-- TravelerHoursSummaryDiv -->
+
+						<div id="TravelerLossSummaryDiv">
+							<div class="TitleScheme">
+								<table class="FullWidth">
+									<tbody>
+											<tr>
+												<td><input type="button" value="New Loss" id="TravelerLossNew" /></td>
+												<td class="AlignRight">Loss contains <input type="text" id="TravelerLossSearch" /></td>
+											</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="BorderBottomScheme">
+								<table class="FullWidth">
+									<tbody>
+											<tr>
+												<td class="TLS1"></td>
+												<td class="TLS1"></td>
+												<td class="TLS1"></td>
+												<td class="TLS1"></td>
+											</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="TravelerLossBodyDiv" class="BodyScheme" CoreSize="60">
+								<table class="FullWidth">
+									<tbody></tbody>
+								</table>
+							</div>
+
+							<div id="TravelerLossDetailDiv" class="Modal" style="display:none;">
+								<div id="TravelerLossDetailContainer" class="ModalContainer">
+									<div class="TitleScheme">
+											<table class="FullWidth">
+												<tbody>
+													<tr>
+														<td class="AlignRight">
+																<input type="button" id="TravelerLossDetailClose" class="DetailClose" value="×" />
+														</td>
+													</tr>
+												</tbody>
+											</table>
+									</div>
+									<div id="TravelerLossDefinitionDiv">
+											<table class="FullWidth">
+												<tbody>
+													<tr>
+														<td class="TLD1">Step</td>
+														<td class="TLD2"><select id="TravelerLossStepID" class="TravelerLossDefinitionEdit"></select></td>
+														<td class="TLD3">Loss ID</td>
+														<td class="TLD4 TravelerLossDefinitionEdit" id="TravelerLossID">0</td>
+													</tr>
+													<tr>
+														<td class="TLD1">Qty</td>
+														<td class="TLD2"><input type="text" id="TravelerLossQty" class="TravelerLossDefinitionEdit" CoreValidate="integer" /></td>
+														<td class="TLD3">Created</td>
+														<td class="TLD4 TravelerLossDefinitionEdit" id="TravelerLossCreated"></td>
+													</tr>
+													<tr>
+														<td class="TLD1" colspan="2">Description</td>
+														<td class="TLD3">Created By</td>
+														<td class="TLD4 TravelerLossDefinitionEdit" id="TravelerLossCreatedBy"></td>
+													</tr>
+													<tr>
+														<td class="TLD1" colspan="2" rowspan="4">
+																<textarea id="TravelerLossDescription" class="TravelerLossDefinitionEdit" maxlength="50"></textarea>
+														</td>
+														<td class="TLD3">Updated</td>
+														<td class="TLD4 TravelerLossDefinitionEdit" id="TravelerLossUpdated"></td>
+													</tr>
+													<tr>
+														<td class="TLD3">Updated By</td>
+														<td class="TLD4 TravelerLossDefinitionEdit" id="TravelerLossUpdatedBy"></td>
+													</tr>
+													<tr>
+														<td colspan="4"><br /></td>
+													</tr>
+													<tr>
+														<td colspan="4"><br /></td>
+													</tr>
+													<tr>
+														<td colspan="4"><br /></td>
+													</tr>
+													<tr>
+														<td colspan="2">
+																<input type="button" id="TravelerLossSave" value="Save" class="TravelerBtn" />
+																<input type="button" id="TravelerLossCancel" value="Cancel" class="TravelerBtn" />
+														</td>
+														<td colspan="2" class="AlignRight">
+																<input type="button" id="TravelerLossDelete" value="Delete" class="TravelerBtn" />
+														</td>
+													</tr>
+												</tbody>
+											</table>
+									</div>
+								</div>
+							</div> <!-- TravelerLossDetailDiv -->
+
+						</div> <!-- TravelerLossSummaryDiv -->
+
+				</div> <!-- TravelerDetailContainer -->
+			</div> <!-- TravelerDetailDiv -->
+		</div> <!-- TravelerSummaryDiv -->
+		
+
+		<div id="OrderSummaryDiv">
+				<div class="TitleScheme">
+					<table class="FullWidth">
+						<tbody>
+							<tr>
+									<td>
+										<input id="OrderNew" type="button" value="New Order" />
+									</td>
+									<td class="AlignRight">
+										Order contains <input id="OrderSearch" type="text" />
+									</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="BorderBottomScheme">
+					<table class="FullWidth">
+						<tbody>
+							<tr>
+									<td class="OS1"><div>Customer</div></td>
+									<td class="OS2"><div>Reference</div></td>
+									<td class="OS3"><div>Qty Requested</div></td>
+									<td class="OS4"><div>Ship Date</div></td>
+									<td class="OS5"><div>Sooner</div></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="OrderBodyDiv" class="BodyScheme" CoreSize="60">
+					<table class="FullWidth">
+						<tbody></tbody>
+					</table>
+				</div>
+
+				<div id="OrderDetailDiv" class="Modal" style="display:none;" >
+					<div id="OrderDetailContainer" class="ModalContainer" >
+
+						<div class="TitleScheme">
+							<table class="FullWidth">
+									<tbody>
+										<tr>
+											<td id="OrderTitle">
+												Order Details
+											</td>
+											<td class="AlignRight">
+												<input type="button" id="OrderDetailClose" class="DetailClose" value="×" />
+											</td>
+										</tr>
+									</tbody>
+							</table>
+						</div>
+
+						<div class="TabScheme" id="OrderTabDiv">
+							<span id="OrderDefinition">Definition</span>
+							<span id="AllocationSummary">Travelers</span>
+						</div>
+
+						<div id="OrderDefinitionDiv">
+							<input type="button" id="OrderDefinitionEdit" class="Edit OrderDefinitionEdit" value="Click here to edit" />
+							<table class="FullWidth">
+									<tbody>
+										<tr>
+											<td class="OD1">Customer</td>
+											<td class="OD2" colspan="3"><input type="text" id="OrderCustomer" class="OrderDefinitionEdit" CoreValidate="required" maxlength="50"/></td>
+											<td class="OD5">Order ID</td>
+											<td class="OD6 OrderDefinitionEdit" id="OrderID">0</td>
+										</tr>
+										<tr>
+											<td class="OD1">Reference</td>
+											<td class="OD2" colspan="3"><input type="text" id="OrderReference" class="OrderDefinitionEdit" maxlength="50"/></td>
+											<td class="OD5">Created</td>
+											<td class="OD6 OrderDefinitionEdit" id="OrderCreated"></td>
+										</tr>
+										<tr>
+											<td class="OD1">Cdd Record</td>
+											<td class="OD2" colspan="3">
+												<input type="hidden" id="OrderCddID" class="OrderDefinitionEdit" />
+												<input type="text" id="OrderCddItem" disabled />
+												<input type="button" id="OrderCddSearchBtn" class="OrderDefinitionEdit" value="&#x1F50E;&#xFE0E;" />
+											</td>
+											<td class="OD5">Created By</td>
+											<td class="OD6 OrderDefinitionEdit" id="OrderCreatedBy"></td>
+										</tr>
+										<tr>
+											<td class="OD1">Qty Requested</td>
+											<td class="OD2" colspan="3"><input type="text" id="OrderQtyRequested" class="OrderDefinitionEdit" CoreValidate="integer"/></td>
+											<td class="OD5">Updated</td>
+											<td class="OD6 OrderDefinitionEdit" id="OrderUpdated"></td>
+										</tr>
+										<tr>
+											<td class="OD1">Ship Date</td>
+											<td class="OD2" colspan="3"><input type="date" id="OrderShipDate" class="OrderDefinitionEdit" /></td>
+											<td class="OD5">Updated By</td>
+											<td class="OD6 OrderDefinitionEdit" id="OrderUpdatedBy"></td>
+										</tr>
+										<tr>
+											<td class="OD1">Ship Sooner</td>
+											<td class="OD2" style="text-align:left;">
+												<input type="checkbox" id="OrderSooner" class="OrderDefinitionEdit" />
+											</td>
+											<td class="OD3">Canceled</td>
+											<td class="OD4"><input type="checkbox" id="OrderCanceled" class="OrderDefinitionEdit" /></td>
+											<td class="OD5">&nbsp;</td>
+											<td class="OD6">&nbsp;</td>
+										</tr>
+										<tr>
+											<td colspan="6"><br /></td>
+										</tr>
+										<tr>
+											<td colspan="3">
+												<input type="button" id="OrderSave" value="Save" class="OrderBtn" />
+												<input type="button" id="OrderCancel" value="Cancel" class="OrderBtn" />
+											</td>
+											<td colspan="3" class="AlignRight">
+												<input type="button" id="OrderDelete" value="Delete" class="OrderBtn" />
+											</td>
+										</tr>
+									</tbody>
+							</table>
+						</div> <!-- OrderDefinitionDiv -->
+
+						<div id="OrderCddDetailDiv" class="Modal" style="display:none;">
+							<div id="OrderCddDetailContainer" class="ModalContainer">
+									<div class="TitleScheme">
+										<table class="FullWidth">
+											<tbody>
+												<tr>
+														<td class="AlignRight">
+															<input type="button" id="OrderCddDetailClose" class="DetailClose" value="×" />
+														</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div>
+										<table class="FullWidth">
+											<tbody>
+												<tr>
+														<td class="AlignRight">
+															Cdd contains <input id="OrderCddSearch" type="text" />
+														</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="BorderBottomScheme">
+										<table class="FullWidth">
+											<tbody>
+												<tr>
+														<td class="DCS1"><div>Item</div></td>
+														<td class="DCS2"><div>Series</div></td>
+														<td class="DCS3"><div>Group</div></td>
+														<td class="DCS4"><div>Chip Type</div></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div id="OrderCddBodyDiv" class="BodyScheme" CoreSize="60">
+										<table class="FullWidth">
+											<tbody></tbody>
+										</table>
+									</div>
+							</div> <!-- OrderCddDetailContainer -->
+						</div> <!-- OrderCddDetailDiv -->
+
+						<div id="AllocationSummaryDiv">
+							<table class="FullWidth">
+									<tbody>
+										<tr>
+											<td style="width:45%">
+												<div class="Header">Allocated</div>
+												<div id="AllocationAppliedDiv">
+														<div class="TitleScheme">
+															<table class="FullWidth">
+																<tbody>
+																	<tr>
+																			<td></td>
+																			<td class="AlignRight">
+																				Lot # contains <input id="AllocationAppliedSearch" type="text" />
+																			</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<div class="BorderBottomScheme">
+															<table class="FullWidth">
+																<tbody>
+																	<tr>
+																			<td class="APS1">Lot #</td>
+																			<td class="APS2">Template</td>
+																			<td class="APS3">Qty Added</td>
+																			<td class="APS4">Created</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<div id="AllocationAppliedBodyDiv" class="BodyScheme" CoreSize="60">
+															<table class="FullWidth">
+																<tbody></tbody>
+															</table>
+														</div>
+												</div> <!-- AllocationAppliedDiv -->
+											</td>
+											<td style="width:10%;">
+												<div><input type="button" value="<<" id="AllocationApply" /></div>
+												<br />
+												<div><input type="button" value=">>" id="AllocationRemove" /></div>
+											</td>
+											<td style="width:45%">
+												<div class="Header">Inventory</div>
+												<div id="AllocationAvailableDiv">
+														<div class="TitleScheme">
+															<table class="FullWidth">
+																<tbody>
+																	<tr>
+																			<td></td>
+																			<td class="AlignRight">
+																				Lot # contains <input id="AllocationAvailableSearch" type="text" />
+																			</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<div class="BorderBottomScheme">
+															<table class="FullWidth">
+																<tbody>
+																	<tr>
+																			<td class="AAS1">Lot #</td>
+																			<td class="AAS2">Template</td>
+																			<td class="AAS3">Qty Remaining</td>
+																			<td class="AAS4">Created</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<div id="AllocationAvailableBodyDiv" class="BodyScheme" CoreSize="60">
+															<table class="FullWidth">
+																<tbody></tbody>
+															</table>
+														</div>
+												</div> <!-- AllocationAvailableDiv -->
+											</td>
+										</tr>
+									</tbody>
+							</table>
+						</div> <!-- OrderAllocationSummaryDiv -->
+
+					</div> <!-- OrderDetailContainer-->
+				</div> <!-- OrderDetailDiv -->
+
+		</div> <!-- OrderSummaryDiv -->
+
+		<div id="InventorySummaryDiv">
+			<div class="TitleScheme">
+					<table class="FullWidth">
+						<tbody>
+							<tr>
+								<td>
+										<input id="InventoryNew" type="button" value="New Cdd" />
+								</td>
+								<td class="AlignRight">
+										Lot # contains <input id="InventorySearch" type="text" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+			</div>
+			<div class="BorderBottomScheme">
+					<table class="FullWidth">
+						<tbody>
+							<tr>
+								<td class="IS0">&nbsp;</td>
+								<td class="IS1">Lot #</td>
+								<td class="IS2">Cdd Item</td>
+								<td class="IS3">Template Name</td>
+								<td class="IS4">Total Qty</td>
+								<td class="IS5">Available Qty</td>
+								<td class="IS6">Last Updated</td>
+							</tr>
+						</tbody>
+					</table>
+			</div>
+			<div id="InventoryBodyDiv" class="BodyScheme" CoreSize="60">
+					<table class="FullWidth">
+						<tbody></tbody>
+					</table>
+			</div>
+
+			<div id="InventoryDetailDiv" class="Modal" style="display:none;">
+					<div id="InventoryDetailContainer" class="ModalContainer">
+						<div class="TitleScheme">
+							<table class="FullWidth">
+								<tbody>
+										<tr>
+											<td id="InventoryTitle">
+												Inventory Details
+											</td>
+											<td class="AlignRight">
+												<input type="button" id="InventoryDetailClose" class="DetailClose" value="×" />
+											</td>
+										</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div id="InventoryDefinitionDiv">
+							
+						</div>
+					</div> <!-- InventoryDetailContainer -->
+			</div> <!-- InventoryDetailDiv -->
+		</div> <!-- InventorySummaryDiv -->
+
+		<div id="TemplateSummaryDiv">
+			<div class="TitleScheme">
+				<table class="FullWidth">
+						<tbody>
+							<tr>
+								<td>
+									<input id="TemplateNew" type="button" value="New Template" />
+								</td>
+								<td class="AlignRight">
+									Template contains <input id="TemplateSearch" type="text" />
+								</td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+			<div id="TemplateHeaderDiv" class="BorderBottomScheme">
+				<table class="FullWidth">
+					<tbody>
+						<tr>
+							<td class="MS1">ID</td>
+							<td class="MS2">Template Name</td>
+							<td class="MS3">Last Updated</td>
+							<td class="MS4">Updated By</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="TemplateBodyDiv" class="BodyScheme" CoreSize="60">
+				<table class="FullWidth">
+					<tbody></tbody>
+				</table>
+			</div>
+
+			<div id="TemplateDetailDiv" class="Modal" style="display:none;">
+				<div id="TemplateDetailContainer" class="ModalContainer">
+					
+						<div class="TitleScheme">
+							<table class="FullWidth">
+								<tbody>
+									<tr>
+											<td>
+												<div id="TemplateTitle">New Template</div>
+											</td>
+											<td class="AlignRight">
+												<input type="button" id="TemplateDetailClose" class="DetailClose" value="×" />
+											</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div id="TemplateTabDiv" class="TabScheme">
+							<span id="TemplateDefinition">Definition</span>
+							<span id="TemplateStepSummary">&nbsp;Steps&nbsp;</span>
+						</div>
+
+						<div id="TemplateDefinitionDiv">
+							<input type="button" id="TemplateDefinitionEdit" class="Edit TemplateDefinitionEdit" value="Click here to edit" />
+							<table class="FullWidth">
+								<tbody>
+									<tr>
+										<td class="TD1">Template Name</td>
+										<td class="TD2"><input type="text" id="TemplateName" class="TemplateDefinitionEdit" CoreValidate="required" /></td>
+										<td class="TD3">Template ID</td>
+										<td class="TD4 TemplateDefinitionEdit" id="TemplateID">0</td>
+									</tr>
+									<tr>
+										<td class="TD1">Active</td>
+										<td class="TD2"><input type="checkbox" id="TemplateActive" class="TemplateDefinitionEdit" CoreValidate="required" /></td>
+										<td class="TD3">Created</td>
+										<td class="TD4 TemplateDefinitionEdit" id="TemplateCreated"></td>
+									</tr>
+									<tr>
+										<td class="TD1">&nbsp;</td>
+										<td class="TD2">&nbsp;</td>
+										<td class="TD3">Created By</td>
+										<td class="TD4 TemplateDefinitionEdit" id="TemplateCreatedBy"></td>
+									</tr>
+									<tr>
+										<td class="TD1">&nbsp;</td>
+										<td class="TD2">&nbsp;</td>
+										<td class="TD3">Updated</td>
+										<td class="TD4 TemplateDefinitionEdit" id="TemplateUpdated"></td>
+									</tr>
+									<tr>
+										<td class="TD1">&nbsp;</td>
+										<td class="TD2">&nbsp;</td>
+										<td class="TD3">Updated By</td>
+										<td class="TD4 TemplateDefinitionEdit" id="TemplateUpdatedBy"></td>
+									</tr>
+									<tr>
+										<td colspan="4"><br /></td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<input type="button" id="TemplateSave" value="Save" class="TemplateBtn" />
+											<input type="button" id="TemplateCancel" value="Cancel" class="TemplateBtn" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div> <!-- TemplateDefinitionDiv -->
+
+						<div id="TemplateStepSummaryDiv">
+							<div class="BorderBottomScheme">
+								<table class="FullWidth">
+									<tbody>
+										<tr>
+											<td class="MSS1">Step #</td>
+											<td class="MSS2">Operation</td>
+											<td class="MSS3">Instructions</td>
+											<td class="MSS4">Updated</td>
+											<td class="MSS5">Updated By</td>
+										</tr>
+										<tr>
+											<td class="MSS1"><select id="TemplateStepSeq" class="TemplateStepDefinitionEdit"></select></td>
+											<td class="MSS2"><select id="TemplateStepOperationID" class="TemplateStepDefinitionEdit"></select></td>
+											<td class="MSS3"><textarea id="TemplateStepInstructions" class="TemplateStepDefinitionEdit" maxlength="255"></textarea></td>
+											<td class="MSS4"><input type="hidden" id="TemplateStepID" value="0" /></td>
+											<td class="MSS5">&nbsp;</td>
+											<td class="MSS6"><input type="button" value="Save" id="TemplateStepSave" class="TemplateStepBtn" /></td>
+											<td class="MSS7"><input type="button" value="Clear" id="TemplateStepCancel" class="TemplateStepBtn" /></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="TemplateStepBodyDiv" class="BodyScheme" CoreSize="60">
+								<table class="FullWidth">
+									<tbody></tbody>
+								</table>
+							</div>
+						</div> <!-- TemplateStepSummaryDiv -->
+
+				</div> <!-- TemplateDetailContainer -->
+			</div> <!-- TemplateDetailDiv -->
+		</div> <!-- TemplateSummaryDiv -->
+          
+		<div id="CddSummaryDiv">
+			<div class="TitleScheme">
+				<table class="FullWidth">
+						<tbody>
+							<tr>
+								<td>
+									<input id="CddNew" type="button" value="New Cdd" />
+								</td>
+								<td class="AlignRight">
+									Cdd contains <input id="CddSearch" type="text" />
+								</td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+			<div id="CddBodyDiv" class="BodyScheme" CoreSize="60"></div>
+
+			<div id="CddDetailDiv" class="Modal" style="display:none;" >
+				<div id="CddDetailContainer" class="ModalContainer">
+
+						<div class="TitleScheme">
+							<table class="FullWidth">
+								<tbody>
+									<tr>
+											<td id="CddTitle">
+												Cdd Details
+											</td>
+											<td class="AlignRight">
+												<input type="button" id="CddDetailClose" class="DetailClose" value="×" />
+											</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+		
+						<div id="CddDefinitionDiv">
+							<table class="FullWidth">
+								<tbody>
+									<tr>
+											<td class="CD1">Item</td>
+											<td class="CD2"><input id="CddItem" type="text" class="CddDefinitionEdit" CoreValidate="required" maxlength="25"/></td>
+											<td class="CD3">Tolerance</td>
+											<td class="CD4"><input id="CddTolerance" type="text" class="CddDefinitionEdit" maxlength="5"/></td>
+											<td class="CD5">CddID</td>
+											<td class="CD6 CddDefinitionEdit" id="CddID"></td>
+									</tr>
+									<tr>
+											<td class="CD1">Group</td>
+											<td class="CD2"><input id="CddGroup" type="text" class="CddDefinitionEdit" maxlength="50"/></td>
+											<td class="CD3">Wire</td>
+											<td class="CD4"><input id="CddWire" type="text" class="CddDefinitionEdit" maxlength="10"/></td>
+											<td class="CD5">Created</td>
+											<td class="CD6 CddDefinitionEdit" id="CddCreated"></td>
+									</tr>
+									<tr>
+											<td class="CD1">Series</td>
+											<td class="CD2"><input id="CddSeries" type="text" class="CddDefinitionEdit" maxlength="50"/></td>
+											<td class="CD3">Turns</td>
+											<td class="CD4"><input id="CddTurns" type="text" class="CddDefinitionEdit" maxlength="10"/></td>
+											<td class="CD5">Created By</td>
+											<td class="CD6 CddDefinitionEdit" id="CddCreatedBy"></td>
+									</tr>
+									<tr>
+											<td class="CD1">Chip Type</td>
+											<td class="CD2"><input id="CddChipType" type="text" class="CddDefinitionEdit" maxlength="25"/></td>
+											<td class="CD3">Frequency</td>
+											<td class="CD4"><input id="CddFrequency" type="text" class="CddDefinitionEdit" maxlength="25"/></td>
+											<td class="CD5">Updated</td>
+											<td class="CD6 CddDefinitionEdit" id="CddUpdated"></td>
+									</tr>
+									<tr>
+											<td class="CD1">&nbsp;</td>
+											<td class="CD2">&nbsp;</td>
+											<td class="CD3">&nbsp;</td>
+											<td class="CD4">&nbsp;</td>
+											<td class="CD5">Updated By</td>
+											<td class="CD6 CddDefinitionEdit" id="CddUpdatedBy"></td>
+									</tr>
+									<tr>
+											<td colspan="6" style="height:5px;color:gray; font-size:5pt;"><hr /></td>
+									</tr>
+									<tr>
+											<td class="CD1">DCR Max</td>
+											<td class="CD2"><input id="CddDcrMax" type="text" class="CddDefinitionEdit" CoreValidate="decimal"/></td>
+											<td class="CD3">Inductance Lower</td>
+											<td class="CD4"><input id="CddInductanceLowerLimit" type="text" class="CddDefinitionEdit" CoreValidate="decimal"/></td>
+											<td class="CD5">Verified By</td>
+											<td class="CD6 CddDefinitionEdit" id="CddVerifiedBy"></td>
+									</tr>
+									<tr>
+											<td class="CD1">Packer DCR</td>
+											<td class="CD2"><input id="CddDcrPacker" type="text" class="CddDefinitionEdit" CoreValidate="decimal"/></td>
+											<td class="CD3">Inductance Nom</td>
+											<td class="CD4"><input id="CddInductanceNom" type="text" class="CddDefinitionEdit" CoreValidate="decimal"/></td>
+											<td class="CD5">Verified Date</td>
+											<td class="CD6 CddDefinitionEdit" id="CddVerified"></td>
+									</tr>
+									<tr>
+											<td class="CD1">DCR Uom</td>
+											<td class="CD2"><input id="CddDcrUom" type="text" class="CddDefinitionEdit" maxlength="10"/></td>
+											<td class="CD3">Inductance Upper</td>
+											<td class="CD4"><input id="CddInductanceUpperLimit" type="text" class="CddDefinitionEdit" CoreValidate="decimal"/></td>
+											<td class="CD5">&nbsp;</td>
+											<td class="CD6">&nbsp;</td>
+									</tr>
+									<tr>
+											<td class="CD1">&nbsp;</td>
+											<td class="CD2">&nbsp;</td>
+											<td class="CD3">Inductance UOM</td>
+											<td class="CD4"><input id="CddInductanceUom" type="text" class="CddDefinitionEdit" maxlength="10" /></td>
+											<td class="CD5">&nbsp;</td>
+											<td class="CD6">&nbsp;</td>
+									</tr>
+									<tr>
+											<td colspan="4">&nbsp;</td>
+									</tr>
+									<tr>
+											<td colspan="2">
+												<input id="CddSave" type="button" value="Save" class="CddBtn" /> &nbsp;
+												<input id="CddCancel" type="button" value="Cancel" class="CddBtn" />
+											</td>
+											<td colspan="2" class="AlignCenter">
+												<input id="CddVerify" type="button" value="Verify" class="CddBtn" />
+											</td>
+											<td colspan="2" class="AlignRight">
+												<input id="CddDelete" type="button" value="Delete" class="CddBtn" />
+											</td>
+									</tr>
+								</tbody>
+							</table>
+						</div> <!-- CddDefinitionDiv -->
+
+				</div> <!-- CddDetailContainer -->
+			</div> <!-- CddDetailDiv -->
+		
+		</div> <!-- CddSummaryDiv -->
+        
+        <script src="../Core2/Core2.js"></script>
+        <script src="TRK22.js"></script>
+    </body>
+</html>

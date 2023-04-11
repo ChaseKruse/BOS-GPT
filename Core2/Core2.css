@@ -1,0 +1,87 @@
+﻿html { background: linear-gradient(gray,#CCCCCC); background-image: url(Images/Default.jpg); background-size: cover; background-repeat: no-repeat; height: 100%; }
+
+body {overflow:hidden; width:975px; margin: 10px auto 10px auto; background-color:white; padding:10px;  border-radius:10px; color:black; font-size:11pt;  }
+
+/* -- General Formatting -- */
+.AlignCenter { text-align: center; }
+.AlignRight { text-align: right; }
+.Disabled { color: #CCCCCC; }
+.InActive { color: #CCCCCC;  }
+.InActive:hover { color: red; background-color:gray;}
+.InstructionTitle { color:blue; text-decoration:underline; } 
+.BodyScheme { overflow-x: hidden; overflow-y: scroll; margin:5px 0px 5px 0px; background-color:white; }
+.BorderBottomScheme { border-bottom: 2px solid gray; padding-right:18px;}
+.Container { padding: 10px; border-radius: 10px; background-color: white; }
+.DetailWhite { background-color: white; padding: 10px; border: 2px solid gray; border-radius: 10px; }
+.Edit { width: 100%; text-align: center;  margin:0px 0px 10px 0px; cursor:pointer;}
+    .Edit:hover { color: blue; }
+.FullWidth { width: 100%; }
+.Hover:hover { background-color:#E2E2E2; cursor:pointer; }
+#Logo { cursor: pointer; font-style:italic; font-family:'Buxton Sketch';  background-color:#c60505; border-radius:50px; color:white; width:40px; height:40px; }
+    #Logo>div { font-size:14pt; text-indent:3px; padding-top:9px; } 
+.Modal { position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(255, 0, 0, 0.7)); z-index:1;}
+.ModalContainer { width: 800px; margin: 20px auto 0px auto; background-color:white; padding:10px; border-radius:10px; } 
+.RefTitle { text-decoration: underline; color:brown; font-weight:bold; }
+.Selected { background-color: orange; }
+    .Selected:hover { color:orange; z-index:10;}
+.TextAlignCheckBox { padding: 0px; margin: 0px; position: relative; vertical-align: bottom; top: 0px; }
+.TitleScheme { background-color: #CCCCCC; border: 2px solid gray; border-radius:5px; margin:3px 0px 13px 0px;}
+.TitleFormat { padding:1px 5px 1px 5px; background-color:yellow; border-radius:10px; }
+
+/* -- State Colors -- */
+.CoreDraft { background-color: rgba(0, 148, 255, 0.50);  cursor:pointer; }
+.CoreDraft:hover { background-color: rgba(0, 148, 255, 1); color:white; cursor:pointer; }
+
+.CoreApproved { background-color:rgba(143, 254, 96, 0.50);  cursor:pointer; }
+.CoreApproved:hover { background-color: rgba(143, 254, 96, 1); cursor:pointer; }
+
+.CoreConditional { background-color: rgba(255, 255, 0, 0.50);  cursor:pointer; }
+.CoreConditional:hover { background-color: rgba(255, 255, 0, 1); cursor:pointer; }
+
+.CoreRejected { background-color: rgba(255, 0, 0, 0.50);  cursor:pointer; }
+.CoreRejected:hover { background-color: rgba(255, 0, 0, 1); color:white; cursor:pointer; }
+
+.CoreArchived { background-color: rgba(204, 204, 204, .5); color:gray; text-decoration:line-through;  cursor:pointer; }
+.CoreArchived:hover { background-color: rgba(128, 128, 128, 1); color:white; cursor:pointer; }
+
+
+/* -- Core Menu Formatting -- */
+.CoreMenu { color: blue; text-decoration:none; margin-right:20px; background-color:transparent; border:none;  }
+    .CoreMenu:hover { color: white; background-color:blue; }
+#CoreMenuDiv { z-index: 5; position: absolute; left: 0px; top:0px; width:100%; height: 100%;  background:linear-gradient(rgba(0, 0, 0, 0.8), rgba(255,0,0,.8)); }
+#CoreMenuContainer { width: 800px; margin: 10px auto 0px auto; background-color:white; padding:10px; border-radius:10px; border:2px solid gray; }
+
+/* -- Core Identity Formatting */
+.CoreIdentityDev { background-color: red; color: white; padding:1px 3px 1px 3px; border-radius:5px; }
+.CoreIdentityApplied { background-color: orange; color: black; padding: 1px 3px 1px 3px; border-radius: 5px; }
+.CoreIdentityAvailable { background-color: white; color: black; padding: 1px 3px 1px 3px; border-radius: 5px; }
+
+
+
+/* -- Core Tab Formatting -- */
+
+.TabScheme { margin-top: 7px; margin-bottom:4px;}
+.TabFormat { cursor:pointer; padding: 2px 5px 5px 5px; margin:2px 3px 0px 3px; border-top-left-radius:10px; border-top-right-radius:10px; background-color:gray; color:white; }
+    .TabFormat:hover { color: yellow; }
+.TabSelect { background-color: #E2E2E2; color: black; padding:5px 7px 8px 7px; border-top-color:#E2E2E2; border-left-color: #E2E2E2; border-right-color:#E2E2E2; }
+    .TabSelect:hover { color: black; }
+.TabContainer { display:none; background:linear-gradient(#E2E2E2, white); background-repeat:no-repeat; background-size:cover; border: 4px solid #E2E2E2; padding: 10px; border-radius: 5px; }
+
+
+/* -- Core Page Formatting -- */
+.CorePageButtons { width: 35px; margin:0px 2px 0px 2px; }
+.CorePageEntries { width: 35px; text-align:center;}
+
+/* -- Core Custom Search -- */
+.CoreCustomSearchBtn { width: 15px; height: 15px; margin-left:5px;}
+.CoreCustomSearchSelected { background-color: yellow; }
+.CoreCustomSearchLeftColumn { vertical-align:top; color:#CCCCCC; font-size:10pt;}
+.CoreCustomSearchRightColumn { vertical-align: top; text-align:right;  color:#CCCCCC; font-size:10pt;}
+
+/* -- Core Timer -- */
+#clockdiv { margin-top:-17px; color:red; text-align:right; padding:0px 5px 0px 2px; border-radius:5px; cursor:pointer; font-size:11pt;}
+    #clockdiv span { font-size: 11pt; }
+
+
+/* -- Core Validation -- */
+.CoreError { color:red; width:5px; margin-left:-8px; position:absolute; cursor:pointer;} 

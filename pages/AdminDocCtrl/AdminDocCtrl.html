@@ -1,0 +1,860 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Admin DC</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link href="../Core2/Core2.css" rel="stylesheet" />
+	<link href="AdminDocCtrl.css" rel="stylesheet" />
+</head>
+<body>
+
+
+	<div id="AppTabDiv" class="TabScheme">
+		<span id="SeriesSummary">Series</span>
+		<span id="DocTypeSummary">Document Types</span>
+	</div>
+
+
+
+	<div id="SeriesSummaryDiv">
+        <div id="SeriesSummaryContainer" class="Container">
+            <div id="SeriesSearchDiv">
+                <table class="FullWidth">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input id="SeriesNew" type="button" value="New Series" />
+                            </td>
+                            <td class="AlignRight">
+                                Series contains <input id="SeriesSearch" type="text" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <div id="SeriesHeaderDiv" class="BorderBottomScheme">
+                <table class="FullWidth">
+                    <tbody>
+                        <tr>
+                            <td class="SS0"><div></div></td>
+                            <td class="SS1"><div>Series</div></td>
+                            <td class="SS2"><div>Mask</div></td>
+                            <td class="SS3"><div>Used</div></td>
+                            <td class="SS4"><div>Last Used</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+    
+            <div id="SeriesBodyDiv" class="BodyScheme" CoreSize="80">
+                <table id="SeriesBodyTable" class="FullWidth">
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+	</div> <!-- SeriesSummaryDiv -->
+
+	<div id="SeriesDetailDiv" class="Modal">
+		<div id="SeriesDetailContainer" class="ModalContainer">
+
+			<div class="TitleScheme">
+				<table class="FullWidth">
+					<tbody>
+						<tr>
+							<td id="SeriesTitle">
+								New Series
+							</td>
+							<td class="AlignRight">
+								<input id="SeriesDetailClose" type="button" value="X" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+            
+
+            <div id="AppTabDiv" class="TabScheme">
+                <span id="Seriesdefinition">Series</span>
+                <span id="HistorySummary">Document Types</span>
+            </div>
+
+            <div id="SeriesDefinitionDiv">
+                <!-- Definition for series -->
+            </div>
+            
+
+            <div id="HistorySummaryDiv">
+                <!-- Summary for history -->
+            </div>
+
+            <!-- Insert Defintion and Summaries Here -->
+
+        </div> <!-- SeriesDetailContainer -->
+    </div> <!-- SeriesDetailDiv -->
+
+	<div id="SeriesDetailDiv" class="Modal">
+		<div id="SeriesDetailContainer" class="ModalContainer">
+
+			<div class="TitleScheme">
+				<table class="FullWidth">
+					<tbody>
+						<tr>
+							<td id="SeriesTitle">
+								Series Title
+							</td>
+							<td class="AlignRight">
+								<input id="SeriesDetailClose" type="button" value="X" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+			<div id="SeriesDefinitionDiv">
+				<table class="FullWidth">
+					<tbody>
+
+						<tr>
+							<td class="SD1">Series Name</td>
+							<td class="SD2"><input id="SeriesName" type="text" class="SeriesDefinitionEdit" /></td>
+							<td class="SD3">SeriesID</td>
+							<td class="SD4 SeriesDefinitionEdit" id="SeriesID"></td>
+						</tr>
+						<tr>
+							<td class="SD1">Active</td>
+							<td class="SD2">
+								<input id="SeriesActive" type="checkbox" class="SeriesDefinitionEdit" />
+							</td>
+							<td class="SD3">Created</td>
+							<td class="SD4 SeriesDefinitionEdit" id="SeriesCreated"></td>
+						</tr>
+						<tr>
+							<td class="SD1">Seed</td>
+							<td class="SD2"><input id="SeriesSeed" type="text" class="SeriesDefinitionEdit SeriesParameters" readonly="readonly" tabindex="-1" /></td>
+							<td class="SD3">Created By</td>
+							<td class="SD4 SeriesDefinitionEdit" id="SeriesCreatedBy"></td>
+						</tr>
+						<tr>
+							<td class="SD1">Text Characters</td>
+							<td class="SD2"><input id="SeriesText" type="text" class="SeriesDefinitionEdit SeriesParameters" readonly="readonly" tabindex="-1" /></td>
+							<td class="SD3">Updated</td>
+							<td class="SD4 SeriesDefinitionEdit" id="SeriesUpdated"></td>
+						</tr>
+						<tr>
+							<td class="SD1">List Options</td>
+							<td class="SD2"><input id="SeriesList" type="text" class="SeriesDefinitionEdit SeriesParameters" readonly="readonly" tabindex="-1" /></td>
+							<td class="SD3">Updated By</td>
+							<td class="SD4 SeriesDefinitionEdit" id="SeriesUpdatedBy"></td>
+						</tr>
+						<tr>
+							<td colspan="4">
+                                <input id="SeriesSave" type="button" value="Save" class="SeriesBtn" /> &nbsp;
+                                <input id="SeriesCancel" type="button" value="Cancel" class="SeriesBtn" /> &nbsp;
+                            </td>
+						</tr>
+					</tbody>
+				</table>
+			</div> <!-- SeriesDefinitionDiv -->
+        </div> <!-- SeriesDetailContainer -->
+    </div> <!-- SeriesDetailDiv -->
+
+
+			<div id="MaskDetailDiv" class="Modal">
+				<div id="MaskDetailContainer" class="ModalContainer Fixed" style="margin-top:150px;">
+
+					<div class="TitleScheme">
+						<table class="FullWidth">
+							<tbody>
+								<tr>
+									<td id="MaskDetailTitle">
+										Mask Detail
+									</td>
+									<td class="AlignRight">
+										<span id="MaskID">0</span> &nbsp; <input id="MaskDetailClose" type="button" value="X" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<table class="FullWidth">
+						<tbody>
+							<tr>
+								<td class="M1" id="MaskLabel">
+									Enter fixed characters
+								</td>
+							<tr>
+								<td class="M1">
+									<input id="MaskValue" type="text" />
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>
+									<input id="MaskSave" type="button" value="Save" class="MaskDetailBtn" />
+									<input id="MaskDelete" type="button" value="Delete" class="MaskDetailBtn" style="float:right;"/>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div> <!-- MaskDetailContainer -->
+			</div> <!-- MaskDetailDiv -->
+
+		
+
+
+
+		</div> <!-- SeriesDetailContainer -->
+	</div> <!-- SeriesDetailDiv -->
+
+
+
+
+	<div id="DocTypeSummaryDiv">
+
+		<div class="TitleScheme">
+			<table class="FullWidth">
+				<tbody>
+					<tr>
+						<td>
+							<input id="DocTypeNew" type="button" value="New Doc Type" />
+						</td>
+						<td class="AlignRight">
+							Doc Type contains <input id="DocTypeSearch" type="text" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="DocTypeHeaderDiv" class="BorderBottomScheme">
+			<table class="FullWidth">
+				<tbody>
+					<tr>
+						<td><div class="DTS0"></div></td>
+						<td class="DTS1"><div>Doc Type</div></td>
+						<td class="DTS2"><div>Format</div></td>
+						<td class="DTS3"><div>Classification</div></td>
+						<td class="DTS4"><div>Series</div></td>
+						<td class="DTS5"><div>Used</div></td>
+						<td class="DTS7"><div>Last Used</div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+		<div id="DocTypeBodyDiv" class="BodyScheme" CoreSize="80">
+			<table id="DocTypeBodyTable" class="FullWidth">
+				<tbody>
+					
+				</tbody>
+			</table>
+		</div>
+
+	</div> <!-- DocTypeSummaryDiv -->
+
+
+
+
+	<div id="DocTypeDetailDiv" class="Modal">
+		<div id="DocTypeDetailContainer" class="ModalContainer">
+
+			<div class="TitleScheme">
+				<table class="FullWidth">
+					<tbody>
+						<tr>
+							<td id="DocTypeTitle">
+								Doc Type Title
+							</td>
+							<td class="AlignRight">
+								<input id="DocTypeDetailClose" type="button" value="X" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+			<div id="DocTypeTabDiv" class="TabScheme">
+				<span id="DocTypeDefinition">Definition</span>
+				<span id="DocTypeSeries">Applied Series</span>
+			</div>
+
+
+			<div id="DocTypeDefinitionDiv">
+
+				<input id="DocTypeDefinitionEdit" type="button" value="<<<< Edit >>>>" class="Edit DocTypeDefinitionEdit" />
+
+				<table class="FullWidth">
+					<tbody>
+						<tr>
+							<td class="DTD1">Doc Type</td>
+							<td class="DTD2"><input id="DocTypeName" type="text" class="DocTypeDefinitionEdit" readonly="readonly" /></td>
+							<td class="DTD3">DocTypeID</td>
+							<td class="DTD4 DocTypeDefinitionEdit" id="DocTypeID"></td>
+						</tr>
+						<tr>
+							<td class="DTD1">Description</td>
+							<td class="DTD2"><input id="DocTypeDescription" type="text" class="DocTypeDefinitionEdit" readonly="readonly" /></td>
+							<td class="DTD3">Created</td>
+							<td class="DTD4 DocTypeDefinitionEdit" id="DocTypeCreated"></td>
+						</tr>
+						<tr>
+							<td class="DTD1">Format</td>
+							<td class="DTD2">
+								<input id="DocTypeForm" type="radio" name="DocTypeFormat" value="Form" class="DocTypeDefinitionEdit" disabled="disabled" /> Form &nbsp; &nbsp;
+								<input id="DocTypeData" type="radio" name="DocTypeFormat" value="Data" class="DocTypeDefinitionEdit" disabled="disabled" /> Data
+							</td>
+							<td class="DTD3">Created By</td>
+							<td class="DTD4 DocTypeDefinitionEdit" id="DocTypeCreatedBy"></td>
+						</tr>
+
+						<tr>
+							<td class="DTD1">Default Form</td>
+							<td class="DTD2">
+								<input id="DocTypeDefault" type="text" class="DocTypeDefinitionEdit CoreLock" readonly="readonly" />
+								<input id="DocTypeDefaultBtn" type="button" style="float:right; font-size:8pt;" value="select" />
+								<input id="DocTypeDefaultID" type="hidden" class="DocTypeDefinitionEdit" />
+							</td>
+							<td class="DTD3">Updated</td>
+							<td class="DTD4 DocTypeDefinitionEdit" id="DocTypeUpdated"></td>
+						</tr>
+						<tr>
+							<td class="DTD1">Active</td>
+							<td class="DTD2">
+								<input id="DocTypeActive" type="checkbox" class="DocTypeDefinitionEdit" disabled="disabled" />
+							</td>
+							<td class="DTD3">Updated By</td>
+							<td class="DTD4 DocTypeDefinitionEdit" id="DocTypeUpdatedBy"></td>
+						</tr>
+
+
+
+						<tr>
+							<td class="DTD1" colspan="2" style="padding-right:18px;"><div style="color:white; background-color:gray; border-radius:3px; text-indent:3px;"> Choose the document state change after the final step completes</div></td>
+							<td class="DTD3">Hits</td>
+							<td class="DTD4 DocTypeDefinitionEdit" id="DocTypeHits"></td>
+
+						</tr>
+						<tr>
+							<td class="DTD1a" style="padding-top:5px;">Standard</td>
+							<td class="DTD2" style="vertical-align:top;" rowspan="3">
+								<input id="DocTypeStd" name="DocTypeClassification" value="Standard" type="radio" style="vertical-align:top;" class="DocTypeDefinitionEdit" disabled="disabled" />
+								<div style="display:inline-block; font-size:10pt; margin-left:5px;">
+									<div style="display:inline-block; width:65px; margin-bottom:5px; background-color:green; color:white;">Approved</div>: draft becomes approved, approved become archived.<br />
+									<div style="display:inline-block; width:65px; margin-bottom:5px;  background-color:yellow;">Conditional</div>: draft becomes conditional, conditional become archived.<br />
+									<div style="display:inline-block; width:65px; margin-bottom:5px;  background-color:red; color:white;">Rejected</div>: reject packet, documents states don't change.
+								</div>
+							</td>
+							<td class="DTD3">Last Used</td>
+							<td class="DTD4 DocTypeDefinitionEdit" id="DocTypeLastUsed"></td>
+						</tr>
+						<tr>
+							<td class="DTD1">&nbsp;</td>
+
+						</tr>
+						<tr>
+							<td class="DTD1">&nbsp;</td>
+							<td class="DTD3">&nbsp;</td>
+							<td class="DTD4">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="padding-right:18px;">
+								<div style="height:2px; background-color:gray; color:gray; margin-bottom:5px;">&nbsp;</div>
+							</td>
+							<td class="DTD3">&nbsp;</td>
+							<td class="DTD4">&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="DTD1a" style="padding-top:5px;">No Archive</td>
+							<td class="DTD2" style="vertical-align:top;">
+								<input id="DocTypeNoArchive" name="DocTypeClassification" value="No Archive" type="radio" style="vertical-align:top;" class="DocTypeDefinitionEdit" disabled="disabled" />
+								<div style="display:inline-block; font-size:10pt; margin-left:5px;">
+									<div style="display:inline-block; width:65px; margin-bottom:5px; background-color:green; color:white;">Approved</div>: draft becomes approved, approved stays approved.<br />
+									<div style="display:inline-block; width:65px; margin-bottom:5px;  background-color:yellow;">Conditional</div>: draft becomes conditional, conditional stays conditional.<br />
+									<div style="display:inline-block; width:65px; margin-bottom:5px;  background-color:red; color:white;">Rejected</div>: reject packet, documents states don't change.
+								</div>
+							</td>
+							<td colspan="2">
+								<div style="background-color:orange; padding:5px; border:2px solid gray; border-radius:10px; width:300px; font-weight:bold;">
+									NOTE: if you need multiple documents created at the same time it requires custom programming.
+								</div>
+							</td>
+						</tr>
+
+
+					</tbody>
+				</table>
+
+				<br />
+			
+			     <div style="display:inline-block;">
+					<input id="DocTypeSave" type="button" value="Save" class="DocTypeDefinitionEdit DocTypeDefinitionBtn" disabled="disabled" /> &nbsp;
+					<input id="DocTypeCancel" type="button" value="Cancel" class="DocTypeDefinitionEdit DocTypeDefinitionBtn" disabled="disabled" /> &nbsp;
+				</div>
+
+
+			</div> <!-- DocTypeDefinitionDiv -->
+
+			<div id="DocTypeSeriesDiv">
+
+				<div class="BlockDiv">
+					<div class="BlockTitle">
+						<table class="FullWidth">
+							<tbody>
+								<tr>
+									<td>
+										Select associated series
+									</td>
+									<td class="AlignRight">
+										Series or Mask contains <input id="DocTypeSeriesSearch" type="text" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<table class="FullWidth">
+						<tbody>
+							<tr>
+								<td style="width:45%; vertical-align:top;">
+									<div>Available</div>
+									<div id="DocTypeSeriesAvailableBodyDiv" class="BodyScheme" CoreSize="100">
+										<table id="DocTypeSeriesAvailableBodyTable" class="FullWidth">
+											<tbody></tbody>
+										</table>
+									</div>
+								</td>
+
+								<td style="width:10%; vertical-align:middle; text-align:center;">
+									<input id="DocTypeSeriesApply" type="button" value=">>" class="ApplyRemoveBtn" style="font-size:12pt;" /><br /><br /><br /><input id="DocTypeSeriesRemove" type="button" value="<<" class="ApplyRemoveBtn" style="font-size:12pt;" />
+								</td>
+
+								<td style="width:45%; vertical-align:top;">
+									<div>Applied</div>
+									<div id="DocTypeSeriesAppliedBodyDiv" class="BodyScheme"  CoreSize="100">
+										<table id="DocTypeSeriesAppliedBodyTable" class="FullWidth">
+											<tbody></tbody>
+										</table>
+									</div>
+								</td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+
+		</div> <!-- DocTypeDetailContainer -->
+	</div> <!-- DocTypeDetailDiv -->
+
+
+
+	<div id="RouteSummaryDiv">
+
+		<div class="TitleScheme">
+			<table class="FullWidth">
+				<tbody>
+					<tr>
+						<td>
+							<input id="RouteNew" type="button" value="New Route" />
+						</td>
+						<td class="AlignRight">
+							Route contains <input id="RouteSearch" type="text" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="RouteHeaderDiv" class="BorderBottomScheme">
+			<table class="FullWidth">
+				<tbody>
+					<tr>
+						<td class="RHS1"><div>&nbsp;</div></td>
+						<td class="RHS2"><div>Route</div></td>
+						<td class="RHS3"><div>Steps</div></td>
+						<td class="RHS4"><div>Used</div></td>
+						<td class="RHS5"><div>Last Used</div></td>
+						<td class="RHS6"><div>Last Updated</div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="RouteBodyDiv" class="BodyScheme" CoreSize ="80">
+			<table id="RouteBodyTable" class="FullWidth">
+				<tbody></tbody>
+			</table>
+		</div>
+
+	</div> <!-- RouteSummaryDiv -->
+
+
+	<div id="RouteDetailDiv" class="Modal">
+		<div id="RouteDetailContainer" class="ModalContainer">
+			
+			<div class="TitleScheme">
+				<table class="FullWidth">
+					<tbody>
+						<tr>
+							<td id="RouteDetailTitle">
+								RouteDetailTitle
+							</td>
+							<td class="AlignRight">
+								<input id="RouteDetailClose" type="button" value="X" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div id="RouteDetailTabDiv" class="TabScheme">
+				<span id="RouteDefinition">Definition</span>
+				<span id="StepSummary">Step Summary</span>
+			</div>
+
+			<div id="RouteDefinitionDiv">
+
+				<input id="RouteDefinitionEdit" type="button" value="<<<< Edit >>>>" class="RouteDefinitionEdit Edit" />
+
+				<table class="FullWidth">
+					<tbody>
+						<tr>
+							<td class="RD1">Route Name</td>
+							<td class="RD2"><input id="RouteName" type="text" class="RouteDefinitionEdit" readonly="readonly" /></td>
+							<td class="RD3">RouteID</td>
+							<td class="RD4 RouteDefinitionEdit" id="RouteID"></td>
+						</tr>
+						<tr>
+							<td class="RD1">Description</td>
+							<td class="RD2" rowspan="2"><textarea id="RouteDescription" class="RouteDefinitionEdit" readonly="readonly"></textarea></td>
+							<td class="RD3">Created</td>
+							<td class="RD4 RouteDefinitionEdit" id="RouteCreated"></td>
+						</tr>
+						<tr>
+							<td class="RD1">&nbsp;</td>
+
+							<td class="RD3">Created By</td>
+							<td class="RD4 RouteDefinitionEdit" id="RouteCreatedBy"></td>
+						</tr>
+						<tr>
+							<td class="RD1">Active</td>
+							<td class="RD2"><input id="RouteActive" type="checkbox" class="RouteDefinitionEdit" disabled="disabled" /></td>
+							<td class="RD3">Updated</td>
+							<td class="RD4 RouteDefinitionEdit" id="RouteUpdated"></td>
+						</tr>
+						<tr>
+							<td class="RD1">&nbsp;</td>
+							<td class="RD2">&nbsp;</td>
+							<td class="RD3">Updated By</td>
+							<td class="RD4 RouteDefinitionEdit" id="RouteUpdatedBy"></td>
+						</tr>
+						
+						<tr>
+							<td class="RD1">&nbsp;</td>
+							<td class="RD2">&nbsp;</td>
+							<td class="RD3">Active Pkts</td>
+							<td class="RD4 RouteDefinitionEdit" id="RouteActivePkts"></td>
+						</tr>
+						<tr>
+							<td class="RD1">&nbsp;</td>
+							<td class="RD2">&nbsp;</td>
+							<td class="RD3">Total Pkts</td>
+							<td class="RD4 RouteDefinitionEdit" id="RouteTotalPkts"></td>
+						</tr>
+						<tr>
+							<td class="RD1">&nbsp;</td>
+							<td class="RD2">&nbsp;</td>
+							<td class="RD3">Last Used</td>
+							<td class="RD4 RouteDefinitionEdit" id="RouteLastUsed"></td>
+						</tr>
+					</tbody>
+				</table>
+				<br />
+				<table class="FullWidth">
+					<tbody>
+						<tr>
+							<td>
+								<input id="RouteDefinitionSave" type="button" value="Save" class="RouteDefinitionEdit RouteBtn" disabled="disabled" /> &nbsp;
+								<input id="RouteDefinitionCancel" type="button" value="Cancel" class="RouteDefinitionEdit RouteBtn" disabled="disabled" /> &nbsp;
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				
+
+
+			</div> <!-- RouteDefinitionDiv -->
+
+
+				<div id="StepSummaryDiv">
+
+					<div class="TitleScheme">
+						<table class="FullWidth">
+							<tbody>
+								<tr>
+									<td>
+										<input id="StepNew" type="button" value="New Step" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div id="StepBodyDiv" class="BodyScheme" CoreSize="80">
+
+					</div>
+
+				</div> <!-- StepSummaryDiv -->
+
+
+				<div id="StepDetailDiv" class="Modal">
+					<div id="StepDetailContainer" class="ModalContainer">
+
+						<div class="TitleScheme">
+							<table class="FullWidth">
+								<tbody>
+									<tr>
+										<td id="StepDetailTitle">
+											StepDetailTitle
+										</td>
+										<td class="AlignRight">
+											<input id="StepDetailClose" type="button" value="X" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div>
+							<table class="FullWidth">
+								<tbody>
+									<tr>
+										<td class="SD1">Seq</td>
+										<td class="SD2"><input id="StepSeq" type="text" class="StepDefinitionEdit" style="width:50px;" /></td>
+										<td class="SD3"><div class="BorderBottomScheme">Reviewers</div></td>
+									</tr>
+
+									<tr>
+										<td class="SD1">Step Name</td>
+										<td class="SD2"><input id="StepName" type="text" class="StepDefinitionEdit" /></td>
+									</tr>
+
+									<tr>
+										<td class="SD1">Group</td>
+										<td class="SD2">
+											<input id="StepGroup" type="text" class="CoreLock StepDefinitionEdit" style="width:385px;" />
+											<input id="StepGroupBtn" type="button" value="Search" class="StepDefinitionEdit" style="float:right;" />
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<div>
+												<table class="FullWidth">
+													<tbody>
+														<tr>
+															<td class="StepOptions">
+																<div class="BorderBottomScheme">Features</div>
+																<table class="FullWidth">
+																	<tbody>
+																		<tr>
+																			<td class="SO1">Notify Only</td>
+																			<td class="SO2"><input id="StepNotify" type="checkbox" class="StepDefinitionEdit" /></td>
+																		</tr>
+																		<tr>
+																			<td class="SO1">Selectable Reviewers</td>
+																			<td class="SO2"><input id="StepSelectable" type="checkbox" class="StepDefinitionEdit" /></td>
+																		</tr>
+																		<tr>
+																			<td class="SO1" style="font-weight:bold; color:red;">Doc State Change</td>
+																			<td class="SO2"><input id="StepFinal" type="checkbox" class="StepDefinitionEdit" /></td>
+																		</tr>
+																		<tr>
+																			<td class="SO1">Parallel Execution</td>
+																			<td class="SO2"><input id="StepParallel" type="checkbox" class="StepDefinitionEdit" /></td>
+																		</tr>
+																		<tr>
+																			<td class="SO1">Comment Required</td>
+																			<td class="SO2"><input id="StepComment" type="checkbox" class="StepDefinitionEdit" /></td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+
+
+															
+															
+
+															<td class="StepOptions">
+																<div class="BorderBottomScheme">Enabled Buttons</div>
+																<table class="FullWidth">
+																	<tbody>
+																		<tr>
+																			<td class="SO1">Approve</td>
+																			<td class="SO2">
+																				&nbsp; <span title='Approved will also say ACKNOWLEDGE when a step is a distribution step. \nWhich is defined by it following a final step.' style="color:green; font-weight:bolder;cursor:pointer;">&#10003;</span>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="SO1">Conditional</td>
+																			<td class="SO2"><input id="StepConditional" type="checkbox" class="StepDefinitionEdit" /></td>
+																		</tr>
+																		<tr>
+																			<td class="SO1">Reject</td>
+																			<td class="SO2"><input id="StepReject" type="checkbox" class="StepDefinitionEdit" /></td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+
+															<td class="StepOptions">
+																<div class="BorderBottomScheme">Operators</div>
+																<table class="FullWidth">
+																	<tbody>
+																		<tr>
+																			<td class="SO1">And</td>
+																			<td class="SO2"><input id="StepAnd" name="StepOperator" type="radio" class="StepDefinitionEdit" /></td>
+																		</tr>
+																		<tr>
+																			<td class="SO1">Or</td>
+																			<td class="SO2"><input id="StepOr" name="StepOperator" type="radio" class="StepDefinitionEdit" /></td>
+																		</tr>
+																	</tbody>
+																</table>
+																<br /><br />
+																<div class="BorderBottomScheme">End of Life Option</div>
+																<table class="FullWidth">
+																	<tbody>
+																		<tr>
+																			<td class="SO1">Archive All</td>
+																			<td class="SO2"><input id="StepArchive" type="checkbox" class="StepDefinitionEdit" /></td>
+																		</tr>
+
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<br />
+						<table class="FullWidth">
+							<tbody>
+								<tr>
+									<td>
+										<input id="StepSave" type="button" value="Save" class="StepDefinitionEdit StepBtn" /> &nbsp;
+										<input id="StepCancel" type="button" value="Cancel" class="StepDefinitionEdit StepBtn" /> &nbsp;
+									</td>
+									<td class="AlignRight">
+										<input id="StepDelete" type="button" value="Delete" class="StepDefinitionEdit StepBtn" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div> <!-- StepDetailContainer -->
+				</div> <!-- StepDetailDiv -->
+
+
+				<div id="StepMenuDiv" class="Modal">
+					<div id="StepMenuContainer" class="ModalContainer">
+
+						<div class="TitleScheme">
+							<table class="FullWidth">
+								<tr>
+									<td>
+										Step Options
+									</td>
+									<td class="AlignRight">
+										<input id="StepMenuClose" type="button" value="X" />
+									</td>
+								</tr>
+							</table>
+						</div>
+
+						<div style="text-align:center;">
+							<input id="StepCreate" type="button" value="Create a new step" class="StepMenuBtn" /> <br />
+							<input id="StepAlt" type="button" value="Select alternative route paths" class="StepMenuBtn" />
+						</div>
+
+						<br /><br />
+					</div> <!-- StepMenuContainer -->
+				</div> <!-- StepMenuDiv -->
+
+
+				<div id="StepAltDiv" class="Modal">
+					<div id="StepAltContainer" class="ModalContainer">
+
+						<div class="TitleScheme">
+							<table class="FullWidth">
+								<tbody>
+									<tr>
+										<td>
+											Step Alternative Route
+										</td>
+										<td class="AlignRight">
+											<input id="StepAltClose" type="button" value="X" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div>
+							<div class="BorderBottomScheme">
+								Route contains <input id="StepAltSearch" type="text" /><br /><br />
+							</div><br />
+							<table class="FullWidth">
+								<tbody>
+									<tr>
+										<td style="width:45%;vertical-align:top;">
+											Available
+											<div id="StepAltAvailableDiv" class="BodyScheme" CoreSize="100">
+												<table id="StepAltAvailableTable" class="FullWidth StepAltEdit">
+													<tbody></tbody>
+												</table>
+											</div>
+										</td>
+										<td style="width:10%;vertical-align:central; text-align:center;">
+											<input id="StepAltApply" type="button" class="StepAltBtn" value=">>" /><br /><input id="StepAltRemove" type="button" class="StepAltBtn" value="<<" />
+										</td>
+										<td style="width:45%;vertical-align:top;">
+											Applied
+											<div id="StepAltAppliedDiv" class="BodyScheme" CoreSize="100">
+												<table id="StepAltAppliedTable" class="FullWidth StepAltEdit">
+													<tbody></tbody>
+												</table>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+					</div> <!-- StepAltContainer -->
+				</div> <!-- StepAltDiv -->
+
+
+			</div> <!-- RouteDetailContainer -->
+	</div> <!-- RouteDetailDiv -->
+
+
+
+	<script src="../Core2/Core2.js"></script>
+	<script src="AdminDocCtrl.js"></script>
+</body>
+</html>

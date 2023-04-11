@@ -1,0 +1,355 @@
+/* General HTML */
+* { box-sizing:border-box; }
+html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+html { font-size:10pt; background: linear-gradient(gray,#CCCCCC); background-image: url(../Core2/Images/Default.jpg); background-size: cover; background-repeat: no-repeat; height: 100%; background-attachment: fixed;}
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5; background-color:white;}html{overflow-x:hidden}
+
+/* Hide Scrollbar */
+::-webkit-scrollbar {
+width: 0;  /* Remove scrollbar space */
+background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+/* Extract from w3-css 4.15 > normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}summary{display:list-item}
+audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
+audio:not([controls]){display:none;height:0}[hidden],template{display:none}
+a{background-color:transparent}a:active,a:hover{outline-width:0}
+abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+b,strong{font-weight:bolder}dfn{font-style:italic}mark{background:#ff0;color:#000}
+small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:1em 40px}img{border-style:none}
+code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}hr{box-sizing:content-box;height:0;overflow:visible}
+button,input,select,textarea,optgroup{font:inherit;margin:0}optgroup{font-weight:bold}
+button,input{overflow:visible}button,select{text-transform:none}
+button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}
+button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}
+button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
+legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}
+[type=checkbox],[type=radio]{padding:0}
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}
+[type=search]{-webkit-appearance:textfield;outline-offset:-2px}
+[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+/* End extract */
+
+/* Components */
+.AppTitle { font-size:14pt;  padding:5px 0 20px; text-align:center; }
+.Container { width:100%; max-width:950px; margin:0px auto; }
+.Sticky { position:sticky; top:0; left:0; width:100%; background-color:white; }
+.Navbar { background-color:#c60505; line-height:50px; height:50px; width:100%; margin-bottom:5px; z-index:99;}
+.Logo { width:100%; text-align:center; cursor:pointer; color:white; font-style:italic; font-family:'Buxton Sketch'; line-height:50px; color:white; display:inline-block; width:80px; font-size:24pt; }
+.Tabs { position: relative; clear: both; margin: 0; width: 100%; white-space: nowrap; overflow-x: scroll; }
+.Tab { display: inline-block; vertical-align: top; background: #eee; padding: 10px; border: 1px solid #ccc; margin-left: -1px; cursor:pointer; position: relative; left: 1px; min-width:60px; text-align:center; }
+.Tab.Selected {background: white;border-bottom: 1px solid white; z-index: 2;}
+.BorderBottom { border-bottom:1px solid black; }
+.Hover:hover { background-color:#ccc; cursor:pointer; }
+.AlignRight { text-align:right; }
+
+/* Fix for Core Paging*/
+.Paging { margin-bottom:5px; padding:5px 0; text-align:center; }
+.Paging input { line-height:16px; }
+.Paging input[type=text] { width:50px; }
+
+/* RWD Rows */
+.Row,.RowPadding{overflow:auto;}
+.Row:after,.Row:before,.RowPadding:after,.RowPadding:before {content:"";height:0;display:table;clear:both;}
+.RowPadding,.RowPadding>.w3-col{padding:0 8px}
+.Col{float:left;width:100%;}
+.Col.S0{display:none;}
+.Col.S1{display:block;width:1.04167%;}
+.Col.S2{display:block;width:2.08333%;}
+.Col.S3{display:block;width:3.12500%;}
+.Col.S4{display:block;width:4.16667%;}
+.Col.S5{display:block;width:5.20833%;}
+.Col.S6{display:block;width:6.25000%;}
+.Col.S7{display:block;width:7.29167%;}
+.Col.S8{display:block;width:8.33333%;}
+.Col.S9{display:block;width:9.37500%;}
+.Col.S10{display:block;width:10.41667%;}
+.Col.S11{display:block;width:11.45833%;}
+.Col.S12{display:block;width:12.50000%;}
+.Col.S13{display:block;width:13.54167%;}
+.Col.S14{display:block;width:14.58333%;}
+.Col.S15{display:block;width:15.62500%;}
+.Col.S16{display:block;width:16.66667%;}
+.Col.S17{display:block;width:17.70833%;}
+.Col.S18{display:block;width:18.75000%;}
+.Col.S19{display:block;width:19.79167%;}
+.Col.S20{display:block;width:20.83333%;}
+.Col.S21{display:block;width:21.87500%;}
+.Col.S22{display:block;width:22.91667%;}
+.Col.S23{display:block;width:23.95833%;}
+.Col.S24{display:block;width:25.00000%;}
+.Col.S25{display:block;width:26.04167%;}
+.Col.S26{display:block;width:27.08333%;}
+.Col.S27{display:block;width:28.12500%;}
+.Col.S28{display:block;width:29.16667%;}
+.Col.S29{display:block;width:30.20833%;}
+.Col.S30{display:block;width:31.25000%;}
+.Col.S31{display:block;width:32.29167%;}
+.Col.S32{display:block;width:33.33333%;}
+.Col.S33{display:block;width:34.37500%;}
+.Col.S34{display:block;width:35.41667%;}
+.Col.S35{display:block;width:36.45833%;}
+.Col.S36{display:block;width:37.50000%;}
+.Col.S37{display:block;width:38.54167%;}
+.Col.S38{display:block;width:39.58333%;}
+.Col.S39{display:block;width:40.62500%;}
+.Col.S40{display:block;width:41.66667%;}
+.Col.S41{display:block;width:42.70833%;}
+.Col.S42{display:block;width:43.75000%;}
+.Col.S43{display:block;width:44.79167%;}
+.Col.S44{display:block;width:45.83333%;}
+.Col.S45{display:block;width:46.87500%;}
+.Col.S46{display:block;width:47.91667%;}
+.Col.S47{display:block;width:48.95833%;}
+.Col.S48{display:block;width:50.00000%;}
+.Col.S49{display:block;width:51.04167%;}
+.Col.S50{display:block;width:52.08333%;}
+.Col.S51{display:block;width:53.12500%;}
+.Col.S52{display:block;width:54.16667%;}
+.Col.S53{display:block;width:55.20833%;}
+.Col.S54{display:block;width:56.25000%;}
+.Col.S55{display:block;width:57.29167%;}
+.Col.S56{display:block;width:58.33333%;}
+.Col.S57{display:block;width:59.37500%;}
+.Col.S58{display:block;width:60.41667%;}
+.Col.S59{display:block;width:61.45833%;}
+.Col.S60{display:block;width:62.50000%;}
+.Col.S61{display:block;width:63.54167%;}
+.Col.S62{display:block;width:64.58333%;}
+.Col.S63{display:block;width:65.62500%;}
+.Col.S64{display:block;width:66.66667%;}
+.Col.S65{display:block;width:67.70833%;}
+.Col.S66{display:block;width:68.75000%;}
+.Col.S67{display:block;width:69.79167%;}
+.Col.S68{display:block;width:70.83333%;}
+.Col.S69{display:block;width:71.87500%;}
+.Col.S70{display:block;width:72.91667%;}
+.Col.S71{display:block;width:73.95833%;}
+.Col.S72{display:block;width:75.00000%;}
+.Col.S73{display:block;width:76.04167%;}
+.Col.S74{display:block;width:77.08333%;}
+.Col.S75{display:block;width:78.12500%;}
+.Col.S76{display:block;width:79.16667%;}
+.Col.S77{display:block;width:80.20833%;}
+.Col.S78{display:block;width:81.25000%;}
+.Col.S79{display:block;width:82.29167%;}
+.Col.S80{display:block;width:83.33333%;}
+.Col.S81{display:block;width:84.37500%;}
+.Col.S82{display:block;width:85.41667%;}
+.Col.S83{display:block;width:86.45833%;}
+.Col.S84{display:block;width:87.50000%;}
+.Col.S85{display:block;width:88.54167%;}
+.Col.S86{display:block;width:89.58333%;}
+.Col.S87{display:block;width:90.62500%;}
+.Col.S88{display:block;width:91.66667%;}
+.Col.S89{display:block;width:92.70833%;}
+.Col.S90{display:block;width:93.75000%;}
+.Col.S91{display:block;width:94.79167%;}
+.Col.S92{display:block;width:95.83333%;}
+.Col.S93{display:block;width:96.87500%;}
+.Col.S94{display:block;width:97.91667%;}
+.Col.S95{display:block;width:98.95833%;}
+.Col.S96{display:block;width:99.99999%;}
+@media (min-width:601px){
+.Col.M0{display:none;}
+.Col.M1{display:block;width:1.04167%;}
+.Col.M2{display:block;width:2.08333%;}
+.Col.M3{display:block;width:3.12500%;}
+.Col.M4{display:block;width:4.16667%;}
+.Col.M5{display:block;width:5.20833%;}
+.Col.M6{display:block;width:6.25000%;}
+.Col.M7{display:block;width:7.29167%;}
+.Col.M8{display:block;width:8.33333%;}
+.Col.M9{display:block;width:9.37500%;}
+.Col.M10{display:block;width:10.41667%;}
+.Col.M11{display:block;width:11.45833%;}
+.Col.M12{display:block;width:12.50000%;}
+.Col.M13{display:block;width:13.54167%;}
+.Col.M14{display:block;width:14.58333%;}
+.Col.M15{display:block;width:15.62500%;}
+.Col.M16{display:block;width:16.66667%;}
+.Col.M17{display:block;width:17.70833%;}
+.Col.M18{display:block;width:18.75000%;}
+.Col.M19{display:block;width:19.79167%;}
+.Col.M20{display:block;width:20.83333%;}
+.Col.M21{display:block;width:21.87500%;}
+.Col.M22{display:block;width:22.91667%;}
+.Col.M23{display:block;width:23.95833%;}
+.Col.M24{display:block;width:25.00000%;}
+.Col.M25{display:block;width:26.04167%;}
+.Col.M26{display:block;width:27.08333%;}
+.Col.M27{display:block;width:28.12500%;}
+.Col.M28{display:block;width:29.16667%;}
+.Col.M29{display:block;width:30.20833%;}
+.Col.M30{display:block;width:31.25000%;}
+.Col.M31{display:block;width:32.29167%;}
+.Col.M32{display:block;width:33.33333%;}
+.Col.M33{display:block;width:34.37500%;}
+.Col.M34{display:block;width:35.41667%;}
+.Col.M35{display:block;width:36.45833%;}
+.Col.M36{display:block;width:37.50000%;}
+.Col.M37{display:block;width:38.54167%;}
+.Col.M38{display:block;width:39.58333%;}
+.Col.M39{display:block;width:40.62500%;}
+.Col.M40{display:block;width:41.66667%;}
+.Col.M41{display:block;width:42.70833%;}
+.Col.M42{display:block;width:43.75000%;}
+.Col.M43{display:block;width:44.79167%;}
+.Col.M44{display:block;width:45.83333%;}
+.Col.M45{display:block;width:46.87500%;}
+.Col.M46{display:block;width:47.91667%;}
+.Col.M47{display:block;width:48.95833%;}
+.Col.M48{display:block;width:50.00000%;}
+.Col.M49{display:block;width:51.04167%;}
+.Col.M50{display:block;width:52.08333%;}
+.Col.M51{display:block;width:53.12500%;}
+.Col.M52{display:block;width:54.16667%;}
+.Col.M53{display:block;width:55.20833%;}
+.Col.M54{display:block;width:56.25000%;}
+.Col.M55{display:block;width:57.29167%;}
+.Col.M56{display:block;width:58.33333%;}
+.Col.M57{display:block;width:59.37500%;}
+.Col.M58{display:block;width:60.41667%;}
+.Col.M59{display:block;width:61.45833%;}
+.Col.M60{display:block;width:62.50000%;}
+.Col.M61{display:block;width:63.54167%;}
+.Col.M62{display:block;width:64.58333%;}
+.Col.M63{display:block;width:65.62500%;}
+.Col.M64{display:block;width:66.66667%;}
+.Col.M65{display:block;width:67.70833%;}
+.Col.M66{display:block;width:68.75000%;}
+.Col.M67{display:block;width:69.79167%;}
+.Col.M68{display:block;width:70.83333%;}
+.Col.M69{display:block;width:71.87500%;}
+.Col.M70{display:block;width:72.91667%;}
+.Col.M71{display:block;width:73.95833%;}
+.Col.M72{display:block;width:75.00000%;}
+.Col.M73{display:block;width:76.04167%;}
+.Col.M74{display:block;width:77.08333%;}
+.Col.M75{display:block;width:78.12500%;}
+.Col.M76{display:block;width:79.16667%;}
+.Col.M77{display:block;width:80.20833%;}
+.Col.M78{display:block;width:81.25000%;}
+.Col.M79{display:block;width:82.29167%;}
+.Col.M80{display:block;width:83.33333%;}
+.Col.M81{display:block;width:84.37500%;}
+.Col.M82{display:block;width:85.41667%;}
+.Col.M83{display:block;width:86.45833%;}
+.Col.M84{display:block;width:87.50000%;}
+.Col.M85{display:block;width:88.54167%;}
+.Col.M86{display:block;width:89.58333%;}
+.Col.M87{display:block;width:90.62500%;}
+.Col.M88{display:block;width:91.66667%;}
+.Col.M89{display:block;width:92.70833%;}
+.Col.M90{display:block;width:93.75000%;}
+.Col.M91{display:block;width:94.79167%;}
+.Col.M92{display:block;width:95.83333%;}
+.Col.M93{display:block;width:96.87500%;}
+.Col.M94{display:block;width:97.91667%;}
+.Col.M95{display:block;width:98.95833%;}
+.Col.M96{display:block;width:99.99999%;}
+}
+@media (min-width:993px){
+.Col.L0{display:none;}
+.Col.L1{display:block;width:1.04167%;}
+.Col.L2{display:block;width:2.08333%;}
+.Col.L3{display:block;width:3.12500%;}
+.Col.L4{display:block;width:4.16667%;}
+.Col.L5{display:block;width:5.20833%;}
+.Col.L6{display:block;width:6.25000%;}
+.Col.L7{display:block;width:7.29167%;}
+.Col.L8{display:block;width:8.33333%;}
+.Col.L9{display:block;width:9.37500%;}
+.Col.L10{display:block;width:10.41667%;}
+.Col.L11{display:block;width:11.45833%;}
+.Col.L12{display:block;width:12.50000%;}
+.Col.L13{display:block;width:13.54167%;}
+.Col.L14{display:block;width:14.58333%;}
+.Col.L15{display:block;width:15.62500%;}
+.Col.L16{display:block;width:16.66667%;}
+.Col.L17{display:block;width:17.70833%;}
+.Col.L18{display:block;width:18.75000%;}
+.Col.L19{display:block;width:19.79167%;}
+.Col.L20{display:block;width:20.83333%;}
+.Col.L21{display:block;width:21.87500%;}
+.Col.L22{display:block;width:22.91667%;}
+.Col.L23{display:block;width:23.95833%;}
+.Col.L24{display:block;width:25.00000%;}
+.Col.L25{display:block;width:26.04167%;}
+.Col.L26{display:block;width:27.08333%;}
+.Col.L27{display:block;width:28.12500%;}
+.Col.L28{display:block;width:29.16667%;}
+.Col.L29{display:block;width:30.20833%;}
+.Col.L30{display:block;width:31.25000%;}
+.Col.L31{display:block;width:32.29167%;}
+.Col.L32{display:block;width:33.33333%;}
+.Col.L33{display:block;width:34.37500%;}
+.Col.L34{display:block;width:35.41667%;}
+.Col.L35{display:block;width:36.45833%;}
+.Col.L36{display:block;width:37.50000%;}
+.Col.L37{display:block;width:38.54167%;}
+.Col.L38{display:block;width:39.58333%;}
+.Col.L39{display:block;width:40.62500%;}
+.Col.L40{display:block;width:41.66667%;}
+.Col.L41{display:block;width:42.70833%;}
+.Col.L42{display:block;width:43.75000%;}
+.Col.L43{display:block;width:44.79167%;}
+.Col.L44{display:block;width:45.83333%;}
+.Col.L45{display:block;width:46.87500%;}
+.Col.L46{display:block;width:47.91667%;}
+.Col.L47{display:block;width:48.95833%;}
+.Col.L48{display:block;width:50.00000%;}
+.Col.L49{display:block;width:51.04167%;}
+.Col.L50{display:block;width:52.08333%;}
+.Col.L51{display:block;width:53.12500%;}
+.Col.L52{display:block;width:54.16667%;}
+.Col.L53{display:block;width:55.20833%;}
+.Col.L54{display:block;width:56.25000%;}
+.Col.L55{display:block;width:57.29167%;}
+.Col.L56{display:block;width:58.33333%;}
+.Col.L57{display:block;width:59.37500%;}
+.Col.L58{display:block;width:60.41667%;}
+.Col.L59{display:block;width:61.45833%;}
+.Col.L60{display:block;width:62.50000%;}
+.Col.L61{display:block;width:63.54167%;}
+.Col.L62{display:block;width:64.58333%;}
+.Col.L63{display:block;width:65.62500%;}
+.Col.L64{display:block;width:66.66667%;}
+.Col.L65{display:block;width:67.70833%;}
+.Col.L66{display:block;width:68.75000%;}
+.Col.L67{display:block;width:69.79167%;}
+.Col.L68{display:block;width:70.83333%;}
+.Col.L69{display:block;width:71.87500%;}
+.Col.L70{display:block;width:72.91667%;}
+.Col.L71{display:block;width:73.95833%;}
+.Col.L72{display:block;width:75.00000%;}
+.Col.L73{display:block;width:76.04167%;}
+.Col.L74{display:block;width:77.08333%;}
+.Col.L75{display:block;width:78.12500%;}
+.Col.L76{display:block;width:79.16667%;}
+.Col.L77{display:block;width:80.20833%;}
+.Col.L78{display:block;width:81.25000%;}
+.Col.L79{display:block;width:82.29167%;}
+.Col.L80{display:block;width:83.33333%;}
+.Col.L81{display:block;width:84.37500%;}
+.Col.L82{display:block;width:85.41667%;}
+.Col.L83{display:block;width:86.45833%;}
+.Col.L84{display:block;width:87.50000%;}
+.Col.L85{display:block;width:88.54167%;}
+.Col.L86{display:block;width:89.58333%;}
+.Col.L87{display:block;width:90.62500%;}
+.Col.L88{display:block;width:91.66667%;}
+.Col.L89{display:block;width:92.70833%;}
+.Col.L90{display:block;width:93.75000%;}
+.Col.L91{display:block;width:94.79167%;}
+.Col.L92{display:block;width:95.83333%;}
+.Col.L93{display:block;width:96.87500%;}
+.Col.L94{display:block;width:97.91667%;}
+.Col.L95{display:block;width:98.95833%;}
+.Col.L96{display:block;width:99.99999%;}
+}
